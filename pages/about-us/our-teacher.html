@@ -41,6 +41,7 @@
         <link rel="stylesheet" href="/css/normalize.css">
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/responsive.css">
+		<link rel="stylesheet" href="/css/gallery.css">
 		
     </head>
     <body>
@@ -123,7 +124,7 @@
 													<li><a href="/pages/about-us/principal-message.html">Principal Message</a></li>
 													<li><a href="/pages/about-us/administration.html">Administration</a></li>
 													<li><a href="/pages/about-us/our-teacher.html">Teachers</a></li>
-													<li><a href="/pages/about-us/assistants.html">Teachers Assistant</a></li>	
+													<li><a href="/pages/about-us/assistants.html">Teachers Assistant</a></li>
 													<li><a href="/pages/about-us/department.html">Department Specialist</a></li>
 													<li><a href="/pages/about-us/service.html">Service Staff</a></li>
 													<li><a href="https://drive.google.com/drive/folders/14JeFB3iYC-7_Iese5EG01Mqj5WmhLp9R" target="_blank">Publication</a></li>
@@ -180,11 +181,44 @@
 					<div class="col-lg-12">
 						<div class="section-title">
 							<p></p>
-							<h2>Principal's Message</h2>
+							<h2>Our Teachers</h2>
 							<img src="/img/section-img.png" alt="#">
-							<p>“True education does not ignore the value of scientific knowledge or literary acquirements; but above information it values power; above power, goodness; above intellectual acquirements, character. The world does not so much need men of great intellect as of noble character.” </p>
-							<p>–  (Education, 225) –</p>
+							<p>“The greatest want of the world is the want of men—men who will not be bought or sold, men who in their inmost souls are true and honest, men who do not fear to call sin by its right name, men whose conscience is as true to duty as the needle to the pole, men who will stand for the right though the heavens fall.” </p>
+							<p>– Ellen G. White, Education –</p>
 						</div>
+					</div>
+					<div class="image-gallery">
+						<img src="/img/about-us/teachers/1.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/2.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/3.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/4.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/5.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/6.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/7.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/8.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/9.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/10.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/11.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/12.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/13.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/14.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/15.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/16.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/17.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/18.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/19.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/20.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/21.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/22.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/23.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/24.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/25.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/26.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/27.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/28.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/29.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/30.png" onclick="openFullImg(this.src)">
+						<img src="/img/about-us/teachers/31.png" onclick="openFullImg(this.src)">
 					</div>
 				</div>
 			</div>
@@ -315,5 +349,18 @@
 		<script src="/js/bootstrap.min.js"></script>
 		<!-- Main JS -->
 		<script src="/js/main.js"></script>
+
+		<script>
+			var fullImgBox = document.getElementById("fullImgBox");
+			var fullImg = document.getElementById("fullImg");
+		
+			function openFullImg(pic){
+				fullImgBox.style.display = "flex";
+				fullImg.src = pic;
+			}
+			function closeFullImg(){
+				fullImgBox.style.display = "none";
+			}
+		</script>
     </body>
 </html>
