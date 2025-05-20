@@ -19,6 +19,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
 		<!-- Bootstrap CSS -->
+		 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"/>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<!-- Nice Select CSS -->
 		<link rel="stylesheet" href="css/nice-select.css">
@@ -179,18 +180,17 @@
 		<section class="slider">
 			<div class="hero-slider">
 				<!-- Start Single Slider -->
-				<div class="single-slider" style="background-image:url('img/slider/extra.png')">
+				<div class="single-slider" style="background-image:url('img/slider/slider6.png')">
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-7">
 								<div class="text">
-									<h1>CONGRATULATIONS</h1>
-									<h5><span>To Our Exceptional Students</span></h5>
-									<h2><span>SY 2024-2025</span></h2>
+									<h1>Mission Spotlight</h1>
+									<h2><span>WHERE FAITH AND FUTURE MEET</span></h2>
 									<p></p>
-									<h5>Congratulations to our exceptional students for their outstanding achievements in the Angkor Mathematics Competition (AMC) and International Genius Challenge (IGC) 2024! </h5>
+									<h5>In here education is more than books and grades. It's a journey of excellence, purpose, and faith. CAIS is a light og Christian influence.</h5>
 									<div class="button">
-										<a href="pages/extra/extra-2024.html" class="btn">Read More!</a>
+										<a role="button" href="javascript:void(0)" class="video-popup btn">Watch Now!</a>
 									</div>
 								</div>
 							</div>
@@ -822,5 +822,24 @@
 		<script src="js/bootstrap.min.js"></script>
 		<!-- Main JS -->
 		<script src="js/main.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+
+		<script>
+			// GLightBox
+			GLightbox({
+				selector: ".video-popup",
+				href: "https://www.youtube.com/watch?v=wnswuLhMrFM",
+				type: "video",
+				source: "youtube",
+				width: 900,
+				autoplayVideos: true,
+			});
+
+			const myGallery3 = GLightbox({
+				selector: ".portfolio-box",
+				type: "image",
+				width: 900,
+			});
+		</script>
     </body>
 </html>
