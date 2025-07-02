@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cambodia Adventist International School</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    .animate-fadeInUp {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Top Contact Bar (scrolls away) -->
+  <div class="hidden sm:flex bg-[#002855] h-[50px] text-white text-sm py-4 px-4 justify-end items-center space-x-6">
+    <div class="flex items-center space-x-1">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-inbound-fill" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877zM15.854.146a.5.5 0 0 1 0 .708L11.707 5H14.5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 1 0v2.793L15.146.146a.5.5 0 0 1 .708 0"/>
+      </svg>
+      <span>+855 (12) 946-041 | +855 (98) 946-041</span>
+    </div>
+
+    <div class="flex items-center space-x-1">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+        <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+      </svg>
+      <span>info@cais.edu.kh</span>
+    </div>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgWA38XkUposkZZVW5WQ8J9O-kpMKZ2NbFsLlCRH6Nb1f8lg/viewform" target="_blank">
+      <div class="flex items-center space-x-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-square-fill" viewBox="0 0 16 16">
+          <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.93 4.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+        </svg>
+        <span>Apply Now</span>
+      </div>
+    </a>
+  </div>
+   <!-- Sticky Header -->
+  <header class="sticky top-0 left-0 bg-white shadow z-50 fade-slide">
+    <div class="max-w-7xl mx-auto h-[65px] px-4 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="#home" class="flex items-center space-x-2">
+        <img src="img/logo.png" alt="Logo" class="h-10 w-auto"> <!-- smaller logo -->
+      </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex space-x-10 relative text-sm font-medium">
+      <a href="home.html" class="hover:text-blue-700 transition duration-300">Home</a>
+
+      <!-- About Us Dropdown -->
+      <div class="relative group">
+        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
+          <span>About Us</span>
+          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div
+          class="absolute left-0 top-full mt-3 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
+        >
+          <a href="principal.html" class="block hover:bg-blue-50 border-b p-4">Principal's Message</a>
+          <a href="about.html" class="block hover:bg-blue-50 border-b p-4">Mission and Vision</a>
+          <a href="administration.html" class="block hover:bg-blue-50 border-b p-4">Administration</a>
+          <a href="faculty.html" class="block hover:bg-blue-50 border-b p-4">Faculty & Staff</a>
+          <a href="#online" class="block hover:bg-blue-50 border-b p-4">Contact Us</a>
+        </div>
+      </div>
+
+      <!-- Admission Dropdown -->
+      <div class="relative group">
+        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
+          <span>Admission</span>
+          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div
+          class="absolute left-0 top-full mt-2 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
+        >
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTqmfdzG4pRYjxWC40D5zTeRZU3qabje0LgjhoP_tvY-SzNw/viewform" target="_blank" class="block hover:bg-blue-50 border-b p-4">Returning Student</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgWA38XkUposkZZVW5WQ8J9O-kpMKZ2NbFsLlCRH6Nb1f8lg/viewform" target="_blank" class="block hover:bg-blue-50 border-b p-4">New Student</a>
+          <a href="https://drive.google.com/file/d/11SaWflOYNz6boXAKXAy7v6-prXdq19q5/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Tuition Fee</a>
+        </div>
+      </div>
+
+      <!-- Gallery Dropdown-->
+      <div class="relative group">
+        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
+          <span>Gallery</span>
+          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div
+          class="absolute left-0 top-full mt-3 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
+        >
+          <a href="https://drive.google.com/drive/folders/1Wv0efDPBOOdNPqvCkhw0dVclm7YHo_rA?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Activities</a>
+          <a href="https://drive.google.com/drive/folders/1ZBkTQnqoElsMOyYoNwF_mJlfrzaIdBH-?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Alumni</a>
+          <a href="https://drive.google.com/drive/folders/1_EKwG7MbNhsnmQh7z_BfoUhUuNCJrsrP?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Art Fair</a>
+          <a href="https://drive.google.com/drive/folders/1jaH8NTCQI8XZWESurX-atxUbcH_zcSVS?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Christmas Program</a>
+          <a href="https://drive.google.com/drive/folders/1PUlJT-mSzW63ORkK9VDpG_gKeFVpfSGT?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Cultural Show</a>
+          <a href="https://drive.google.com/drive/folders/1pxT8Ury7LjbsHNcAvIwMdE9ppZie4nBM?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Science Fair</a>
+          <a href="https://drive.google.com/drive/folders/1p2rBvtlde2xmylqqosR3EFx-hcpafpuT?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Sport</a>
+        </div>
+      </div>
+
+      <!-- Quick Link Dropdown -->
+      <div class="relative group">
+        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
+          <span>Quick Link</span>
+          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div
+          class="absolute left-0 top-full mt-3 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
+        >
+          <a href="https://drive.google.com/file/d/1lJk1FRe0gHvwKqCcTP8ful9dnmTsYHFq/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Curriculum</a>
+          <a href="https://drive.google.com/file/d/1jjaEDeOag58ZMCuKKZCYejP6qsb2Xm__/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School History</a>
+          <a href="https://drive.google.com/file/d/1PuA1HRQ7Wlxm6QT8OktzJtFMdKlca6xe/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Logo</a>
+          <a href="https://drive.google.com/file/d/1_Nhvn_tWPntOmTFBhtn9cQWbgPfNnDUn/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Handbook</a>
+          <a href="https://drive.google.com/file/d/1L7VDNpo1ZLoQRwDvJrhjelEF1ONw_DAq/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Calendar</a>
+          <a href="https://lms.cais.edu.kh/" target="_blank" class="block hover:bg-blue-50 border-b p-4">School LMS</a>
+          <a href="https://opac.cais.edu.kh/" target="_blank" class="block hover:bg-blue-50 border-b p-4">Library Catalog</a>
+        </div>
+      </div>
+    </nav>
+
+
+      <!-- Burger Button (Mobile) -->
+      <button id="menuBtn" class="md:hidden text-gray-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2 text-sm font-medium bg-white shadow">
+      <a href="#home" class="block hover:text-blue-700 transition duration-300">Home</a>
+      <a href="#about" class="block hover:text-blue-700 transition duration-300">About Us</a>
+      <a href="#bachelor" class="block hover:text-blue-700 transition duration-300">Bachelor Programs</a>
+      <a href="#master" class="block hover:text-blue-700 transition duration-300">Master Programs</a>
+      <a href="#online" class="block hover:text-blue-700 transition duration-300">Online Courses</a>
+      <a href="#faculty" class="block hover:text-blue-700 transition duration-300">Faculty</a>
+      <a href="#events" class="block hover:text-blue-700 transition duration-300">Events</a>
+      <a href="#contact" class="block hover:text-blue-700 transition duration-300">Contact</a>
+    </div>
+  </header>
+
+  <!-- Mission and Vision -->
+  <section id="mission" class="py-8 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-6xl mx-auto px-4 py-6">
+      <!-- Header -->
+      <h2 class="text-3xl font-bold text-[#002855] mb-2">Mission & Vision</h2>
+      <div class="h-1 w-32 bg-cyan-500 mb-1"></div>
+      <div class="h-1 w-40 bg-yellow-400 inline-block mr-2"></div>
+      <div class="h-1 w-6 bg-pink-700 inline-block"></div>
+
+      <!-- Content Section -->
+      <img class="mt-3" src="img/mission.png" />
+      <div class="mt-10 flex flex-col lg:flex-row items-start gap-10">
+        <!-- Text Content -->
+        <div class="text-gray-800 text-justify leading-relaxed">
+          <h3 class="text-2xl font-medium text-[#002855] mb-2"> PHILOSOPHY </h3>
+          <p class="mb-2">
+            We believe that education should train the mind, body, and the soul of all our students. True education will make the students better citizens for this world and the world to come.
+          </p>
+          <h3 class="text-2xl font-medium text-[#002855] mb-2 mt-4"> MISSION </h3>
+          <p class="mb-2">
+            To provide academic excellence in a Christ-filled environment that encourages the love of God, serving others, and self-respect.
+          </p>
+          <h3 class="text-2xl font-medium text-[#002855] mb-2 mt-4"> VISION STATEMENT </h3>
+          <p class="mb-2">
+            "Success depends not so much on talent as on energy and willingness. It is not the possession of splendid talents that enables us to render acceptable service; but the conscientious performance of daily duties, the contented spirit, the unaffected, sincere interest in the welfare of others. In the humblest lot true excellence may be found. The commonest tasks, wrought with loving faithfulness, are beautiful in God’s sight."– CM 76.1 E.G.White
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#02214d] text-white py-12 px-6 relative">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      
+      <!-- Campus Address -->
+      <div>
+        <h3 class="text-lg font-semibold mb-3 border-b border-white w-fit pb-1">Campus Address</h3>
+        <p class="text-sm leading-relaxed">
+          #419, Street Rada, Phum Tum Nub, <br />
+          Sangkat Phnom Penh Thmey, Khan Sen Sok,<br />
+          Phnom Penh, Cambodia
+        </p>
+        <a href="https://www.facebook.com/caisedu" class="inline-block mt-4 w-8 h-8 border rounded-full text-center leading-8 hover:bg-white hover:text-[#02214d] transition">
+          <i class="fab fa-facebook-f">f</i>
+        </a>
+      </div>
+
+      <!-- Our Contacts -->
+      <div>
+        <h3 class="text-lg font-semibold mb-3 border-b border-white w-fit pb-1">Our Contacts</h3>
+        <p class="text-sm">Vice-Principal: Mr. Thach, July<br />
+          Phone: (+855) 96 270 9988</p>
+        <p class="text-sm mt-2">Vice-Principal: Mrs. Sieng, Socheata<br />
+          Phone: (+855) 92 247 604</p>
+        <p class="text-sm mt-2">Email: info@cais.edu.kh</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-3 border-b border-white w-fit pb-1">Quick Links</h3>
+        <ul class="text-sm space-y-2">
+          <li><a href="https://drive.google.com/file/d/1lJk1FRe0gHvwKqCcTP8ful9dnmTsYHFq/view?usp=sharing" target="_blank" class="hover:underline">› School Curriculum</a></li>
+          <li><a href="https://drive.google.com/file/d/1jjaEDeOag58ZMCuKKZCYejP6qsb2Xm__/view?usp=sharing" target="_blank" class="hover:underline">› School History</a></li>
+          <li><a hhref="https://drive.google.com/file/d/1PuA1HRQ7Wlxm6QT8OktzJtFMdKlca6xe/view?usp=sharing" target="_blank" class="hover:underline">› School Logo</a></li>
+          <li><a href="https://drive.google.com/file/d/1_Nhvn_tWPntOmTFBhtn9cQWbgPfNnDUn/view?usp=sharing" target="_blank" class="hover:underline">› School Calendar</a></li>
+          <li><a href="https://drive.google.com/file/d/1L7VDNpo1ZLoQRwDvJrhjelEF1ONw_DAq/view?usp=sharing" target="_blank" class="hover:underline">› Student Handbook</a></li>
+          <li><a href="https://opac.cais.edu.kh/" target="_blank" class="hover:underline">› Library</a></li>
+          <li><a href="https://lms.cais.edu.kh/" target="_blank" class="hover:underline">› Moodle</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Us -->
+      <div>
+        <h3 class="text-lg font-semibold mb-3 border-b border-white w-fit pb-1">Visit Us</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.5364050120324!2d104.88466527608405!3d11.585055088617178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109518149711e9f%3A0xb90146b821c0c40d!2sCambodia%20Adventist%20International%20School!5e0!3m2!1sen!2skh!4v1751354926393!5m2!1sen!2skh" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="mt-12 border-t border-blue-900 pt-4 text-center text-sm text-gray-300">
+      &copy; Copyright 2024 | All Rights Reserved by 
+      <a href="#" class="text-blue-300 hover:underline">
+        A Seventh-day Adventist Cambodian Mission Institution of Education.
+      </a>
+    </div>
+
+    <!-- Code of Honor button -->
+
+    <!-- Back to Top button -->
+    <a href="#top" class="fixed bottom-4 right-4 bg-yellow-500 text-white p-4 rounded-full shadow hover:bg-yellow-600">
+      <svg class="w-4 h-4 font-semibold" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M3.293 9.707a1 1 0 011.414 0L10 4.414l5.293 5.293a1 1 0 001.414-1.414l-6-6a1 1 0 00-1.414 0l-6 6a1 1 0 010 1.414z" clip-rule="evenodd" />
+      </svg>
+    </a>
+  </footer>
+
+  <!-- Burger Menu -->
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+  <script>
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll("#slideDots button");
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("opacity-100", i === index);
+        slide.classList.toggle("opacity-0", i !== index);
+        slide.classList.toggle("z-10", i === index);
+      });
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("opacity-70", i === index);
+        dot.classList.toggle("opacity-50", i !== index);
+      });
+
+      current = index;
+    }
+
+    // Auto slide
+    setInterval(() => {
+      const next = (current + 1) % slides.length;
+      showSlide(next);
+    }, 8000);
+
+    // Dot click navigation
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => showSlide(i));
+    });
+
+    showSlide(0);
+  </script>
+  <!-- Slider -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      new Swiper(".studentLifeSwiper", {
+        loop: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        slidesPerView: 1,
+        spaceBetween: 20,
+        breakpoints: {
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        },
+      });
+    });
+  </script>
+  <!-- Academic Honor -->
+  <script>
+    function updateFeaturedHonor(imageUrl, name, detail) {
+      document.getElementById("featuredHonorImage").src = imageUrl;
+      document.getElementById("featuredName").textContent = name;
+      document.getElementById("featuredDetail").textContent = detail;
+    }
+  </script>
+</body>
+</html>

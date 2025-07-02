@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cambodia Adventist International School</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    .animate-fadeInUp {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Top Contact Bar (scrolls away) -->
+  <div class="hidden sm:flex bg-[#002855] h-[50px] text-white text-sm py-4 px-4 justify-end items-center space-x-6">
+    <div class="flex items-center space-x-1">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-inbound-fill" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877zM15.854.146a.5.5 0 0 1 0 .708L11.707 5H14.5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 1 0v2.793L15.146.146a.5.5 0 0 1 .708 0"/>
+      </svg>
+      <span>+855 (12) 946-041 | +855 (98) 946-041</span>
+    </div>
+
+    <div class="flex items-center space-x-1">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+        <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+      </svg>
+      <span>info@cais.edu.kh</span>
+    </div>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgWA38XkUposkZZVW5WQ8J9O-kpMKZ2NbFsLlCRH6Nb1f8lg/viewform" target="_blank">
+      <div class="flex items-center space-x-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-square-fill" viewBox="0 0 16 16">
+          <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.93 4.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+        </svg>
+        <span>Apply Now</span>
+      </div>
+    </a>
+  </div>
+   <!-- Sticky Header -->
+  <header class="sticky top-0 left-0 bg-white shadow z-50 fade-slide">
+    <div class="max-w-7xl mx-auto h-[65px] px-4 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="#home" class="flex items-center space-x-2">
+        <img src="img/logo.png" alt="Logo" class="h-10 w-auto"> <!-- smaller logo -->
+      </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex space-x-10 relative text-sm font-medium">
+      <a href="home.html" class="hover:text-blue-700 transition duration-300">Home</a>
+
+      <!-- About Us Dropdown -->
+      <div class="relative group">
+        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
+          <span>About Us</span>
+          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div
+          class="absolute left-0 top-full mt-3 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
+        >
+          <a href="principal.html" class="block hover:bg-blue-50 border-b p-4">Principal's Message</a>
+          <a href="about.html" class="block hover:bg-blue-50 border-b p-4">Mission and Vision</a>
+          <a href="administration.html" class="block hover:bg-blue-50 border-b p-4">Administration</a>
+          <a href="faculty.html" class="block hover:bg-blue-50 border-b p-4">Faculty & Staff</a>
+          <a href="#online" class="block hover:bg-blue-50 border-b p-4">Contact Us</a>
+        </div>
+      </div>
+
+      <!-- Admission Dropdown -->
+      <div class="relative group">
+        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
+          <span>Admission</span>
+          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div
+          class="absolute left-0 top-full mt-2 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
+        >
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTqmfdzG4pRYjxWC40D5zTeRZU3qabje0LgjhoP_tvY-SzNw/viewform" target="_blank" class="block hover:bg-blue-50 border-b p-4">Returning Student</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgWA38XkUposkZZVW5WQ8J9O-kpMKZ2NbFsLlCRH6Nb1f8lg/viewform" target="_blank" class="block hover:bg-blue-50 border-b p-4">New Student</a>
+          <a href="https://drive.google.com/file/d/11SaWflOYNz6boXAKXAy7v6-prXdq19q5/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Tuition Fee</a>
+        </div>
+      </div>
+
+      <!-- Gallery Dropdown-->
+      <div class="relative group">
+        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
+          <span>Gallery</span>
+          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div
+          class="absolute left-0 top-full mt-3 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
+        >
+          <a href="https://drive.google.com/drive/folders/1Wv0efDPBOOdNPqvCkhw0dVclm7YHo_rA?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Activities</a>
+          <a href="https://drive.google.com/drive/folders/1ZBkTQnqoElsMOyYoNwF_mJlfrzaIdBH-?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Alumni</a>
+          <a href="https://drive.google.com/drive/folders/1_EKwG7MbNhsnmQh7z_BfoUhUuNCJrsrP?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Art Fair</a>
+          <a href="https://drive.google.com/drive/folders/1jaH8NTCQI8XZWESurX-atxUbcH_zcSVS?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Christmas Program</a>
+          <a href="https://drive.google.com/drive/folders/1PUlJT-mSzW63ORkK9VDpG_gKeFVpfSGT?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Cultural Show</a>
+          <a href="https://drive.google.com/drive/folders/1pxT8Ury7LjbsHNcAvIwMdE9ppZie4nBM?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Science Fair</a>
+          <a href="https://drive.google.com/drive/folders/1p2rBvtlde2xmylqqosR3EFx-hcpafpuT?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Sport</a>
+        </div>
+      </div>
+
+      <!-- Quick Link Dropdown -->
+      <div class="relative group">
+        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
+          <span>Quick Link</span>
+          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div
+          class="absolute left-0 top-full mt-3 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
+        >
+          <a href="https://drive.google.com/file/d/1lJk1FRe0gHvwKqCcTP8ful9dnmTsYHFq/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Curriculum</a>
+          <a href="https://drive.google.com/file/d/1jjaEDeOag58ZMCuKKZCYejP6qsb2Xm__/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School History</a>
+          <a href="https://drive.google.com/file/d/1PuA1HRQ7Wlxm6QT8OktzJtFMdKlca6xe/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Logo</a>
+          <a href="https://drive.google.com/file/d/1_Nhvn_tWPntOmTFBhtn9cQWbgPfNnDUn/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Handbook</a>
+          <a href="https://drive.google.com/file/d/1L7VDNpo1ZLoQRwDvJrhjelEF1ONw_DAq/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Calendar</a>
+          <a href="https://lms.cais.edu.kh/" target="_blank" class="block hover:bg-blue-50 border-b p-4">School LMS</a>
+          <a href="https://opac.cais.edu.kh/" target="_blank" class="block hover:bg-blue-50 border-b p-4">Library Catalog</a>
+        </div>
+      </div>
+    </nav>
+
+
+      <!-- Burger Button (Mobile) -->
+      <button id="menuBtn" class="md:hidden text-gray-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2 text-sm font-medium bg-white shadow">
+      <a href="#home" class="block hover:text-blue-700 transition duration-300">Home</a>
+      <a href="#about" class="block hover:text-blue-700 transition duration-300">About Us</a>
+      <a href="#bachelor" class="block hover:text-blue-700 transition duration-300">Bachelor Programs</a>
+      <a href="#master" class="block hover:text-blue-700 transition duration-300">Master Programs</a>
+      <a href="#online" class="block hover:text-blue-700 transition duration-300">Online Courses</a>
+      <a href="#faculty" class="block hover:text-blue-700 transition duration-300">Faculty</a>
+      <a href="#events" class="block hover:text-blue-700 transition duration-300">Events</a>
+      <a href="#contact" class="block hover:text-blue-700 transition duration-300">Contact</a>
+    </div>
+  </header>
+  <!-- President Message Section -->
+  <section id="message" class="py-8 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-6xl mx-auto px-4 py-6">
+      <!-- Header -->
+      <h2 class="text-3xl font-bold text-[#002855] mb-2">Faculty & Staff</h2>
+      <div class="h-1 w-32 bg-cyan-500 mb-1"></div>
+      <div class="h-1 w-40 bg-yellow-400 inline-block mr-2"></div>
+      <div class="h-1 w-6 bg-pink-700 inline-block"></div>
+      <p class="mt-5">“The greatest want of the world is the want of men—men who will not be bought or sold, men who in their inmost souls are true and honest, men who do not fear to call sin by its right name, men whose conscience is as true to duty as the needle to the pole, men who will stand for the right though the heavens fall.”</p>
+      <p class="mt-3">– Ellen G. White, Education –</p>
+    </div>
+
+    <!-- Accordion Item Template -->
+    <!-- Homeroom -->
+    <div class="max-w-6xl mx-auto border border-gray-300">
+      <div class="border-b">
+        <button onclick="togglePanel(this)" class="w-full flex justify-between items-center px-4 py-3 bg-gray-100 hover:bg-gray-200 text-left">
+          <span class="text-xl text-[#002855] font-medium">Homeroom Teacher</span>
+          <span class="text-blue-900 text-xl font-bold">+</span>
+        </button>
+        <div class="hidden px-4 py-2 text-gray-700">
+          <div class="grid md:grid-cols-6 gap-6 text-center mt-5">
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/6.png" alt="principal" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mrs. Genevie Aclo</h4>
+              <p class="text-xs text-gray-600">Pre-Kindergarten</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/7.png" alt="academic" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Ms. Chan Seiha</h4>
+              <p class="text-xs text-gray-600">Kindergarten A</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/8.png" alt="finance" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Ms. Lin Sonisa</h4>
+              <p class="text-xs text-gray-600">Kindergarten B</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/9.png" alt="vice" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mrs. Leng Vannak</h4>
+              <p class="text-xs text-gray-600">Grade 01</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/10.png" alt="vice" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mrs. Ka Nida</h4>
+              <p class="text-xs text-gray-600">Grade 02 A</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/11.png" alt="vice" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Ms. Thach Rebecca</h4>
+              <p class="text-xs text-gray-600">Grade 02 B</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/12.png" alt="vice" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Ms. Thorn Sreynich</h4>
+              <p class="text-xs text-gray-600">Grade 03 A</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/13.png" alt="vice" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Ms. Pheurn Sreywin</h4>
+              <p class="text-xs text-gray-600">Grade 03 B</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/14.png" alt="vice" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Ms. Nang Chanyeema</h4>
+              <p class="text-xs text-gray-600">Grade 04 A</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/15.png" alt="4b" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Ms. Paw Pha Thant</h4>
+              <p class="text-xs text-gray-600">Grade 04 B</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/16.png" alt="4b" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Ms. Ping Chanleakna</h4>
+              <p class="text-xs text-gray-600">Grade 05 A</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/17.png" alt="5b" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Ms. Joan Limaco</h4>
+              <p class="text-xs text-gray-600">Grade 05 B</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/18.png" alt="5b" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mrs. Jenrose Larano</h4>
+              <p class="text-xs text-gray-600">Grade 06 A</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/19.png" alt="5b" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Ms. Rechie Mae Ba-ad</h4>
+              <p class="text-xs text-gray-600">Grade 06 B</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/20.png" alt="5b" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mr. Jetro Alferez</h4>
+              <p class="text-xs text-gray-600">Grade 07 A</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/21.png" alt="5b" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mr. Choup Sela</h4>
+              <p class="text-xs text-gray-600">Grade 07 B / Technology</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/22.png" alt="5b" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Ms. Phan Sophia</h4>
+              <p class="text-xs text-gray-600">Grade 08 A</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/23.png" alt="5b" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mr. Nhin Vichhagar</h4>
+              <p class="text-xs text-gray-600">Grade 08 B / Technology</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/24.png" alt="5b" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Ms. Nang Chandina</h4>
+              <p class="text-xs text-gray-600">Grade 09</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/25.png" alt="5b" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mr. Keurm Piseth</h4>
+              <p class="text-xs text-gray-600">Grade 10 / Khmer</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/26.png" alt="5b" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mr. Ka Sadam</h4>
+              <p class="text-xs text-gray-600">Grade 11</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/27.png" alt="5b" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Ms. Ka Daneth</h4>
+              <p class="text-xs text-gray-600">Grade 12</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-b">
+        <button onclick="togglePanel(this)" class="w-full flex justify-between items-center px-4 py-3 bg-gray-100 hover:bg-gray-200 text-left">
+          <span class="text-xl text-[#002855] font-medium">Subject Teacher</span>
+          <span class="text-blue-900 text-xl font-bold">+</span>
+        </button>
+        <div class="hidden px-4 py-2 text-gray-700">
+          <div class="grid md:grid-cols-6 gap-6 text-center mt-5">
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/33.png" alt="principal" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mrs. Chhun Saveoun</h4>
+              <p class="text-xs text-gray-600">Khmer Language Art</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/38.png" alt="academic" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mrs. Leng Vanny</h4>
+              <p class="text-xs text-gray-600">Chapel / Physical Education</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/28.png" alt="finance" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mr. Sieng Sopheaktra</h4>
+              <p class="text-xs text-gray-600">Science & Chemistry</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/34.png" alt="vice" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mrs. Sip Silim</h4>
+              <p class="text-xs text-gray-600">Khmer Language Art</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/30.png" alt="vice" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mrs. Sorn Sodalin</h4>
+              <p class="text-xs text-gray-600">Khmer Language Art</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/32.png" alt="vice" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mr. Sou Chhaiya</h4>
+              <p class="text-xs text-gray-600">Librarian / KSL</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/31.png" alt="vice" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mr. Thach Sophat</h4>
+              <p class="text-xs text-gray-600">Physical Education / Sport Coordinator</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/29.png" alt="vice" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Ms. Try Trinet</h4>
+              <p class="text-xs text-gray-600">Khmer Language Art</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-b">
+        <button onclick="togglePanel(this)" class="w-full flex justify-between items-center px-4 py-3 bg-gray-100 hover:bg-gray-200 text-left">
+          <span class="text-xl text-[#002855] font-medium">Finance Department</span>
+          <span class="text-blue-900 text-xl font-bold">+</span>
+        </button>
+        <div class="hidden px-4 py-2 text-gray-700">
+          <div class="grid md:grid-cols-6 gap-6 text-center mt-5">
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/35.png" alt="principal" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mr. Horng David</h4>
+              <p class="text-xs text-gray-600">Senior Accountant</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/36.png" alt="academic" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Ms. Sieng Rosa</h4>
+              <p class="text-xs text-gray-600">Junior Accountant</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/37.png" alt="finance" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Ms. Sophal Kanneetha</h4>
+              <p class="text-xs text-gray-600">Cashier / Front Desk</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-b">
+        <button onclick="togglePanel(this)" class="w-full flex justify-between items-center px-4 py-3 bg-gray-100 hover:bg-gray-200 text-left">
+          <span class="text-xl text-[#002855] font-medium">Service Staff</span>
+          <span class="text-blue-900 text-xl font-bold">+</span>
+        </button>
+        <div class="hidden px-4 py-2 text-gray-700">
+          <div class="grid md:grid-cols-6 gap-6 text-center mt-5">
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/39.png" alt="principal" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mrs. Leng Savun</h4>
+              <p class="text-xs text-gray-600">Custodian</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/40.png" alt="academic" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mrs. Hang Votey</h4>
+              <p class="text-xs text-gray-600">Custodian</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/41.png" alt="finance" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mrs. Thorn Phiny</h4>
+              <p class="text-xs text-gray-600">Custodian</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/42.png" alt="finance" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mrs Srey Pov</h4>
+              <p class="text-xs text-gray-600">Custodian</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/43.png" alt="finance" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mrs. Morn Bunna</h4>
+              <p class="text-xs text-gray-600">Custodian</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/44.png" alt="finance" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mrs. Touch Srey</h4>
+              <p class="text-xs text-gray-600">Custodian</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/45.png" alt="finance" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mr. Hun Sophea</h4>
+              <p class="text-xs text-gray-600">Security</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/46.png" alt="finance" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mr. Chak Pheun</h4>
+              <p class="text-xs text-gray-600">Security</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/47.png" alt="finance" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mr. Meas Sophal</h4>
+              <p class="text-xs text-gray-600">Security</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/48.png" alt="finance" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mr. Thach Song</h4>
+              <p class="text-xs text-gray-600">Security</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/49.png" alt="finance" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mr. Choup Dina</h4>
+              <p class="text-xs text-gray-600">Maintenance</p>
+            </div>
+            <div class="bg-gray-100 p-1 shadow">
+              <img src="img/faculty/50.png" alt="finance" class="w-64 mx-auto mb-4">
+              <h4 class="font-bold text-sm">Mr. Sek, Vichet</h4>
+              <p class="text-xs text-gray-600">Maintenant</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#02214d] text-white py-12 px-6 relative">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      
+      <!-- Campus Address -->
+      <div>
+        <h3 class="text-lg font-semibold mb-3 border-b border-white w-fit pb-1">Campus Address</h3>
+        <p class="text-sm leading-relaxed">
+          #419, Street Rada, Phum Tum Nub, <br />
+          Sangkat Phnom Penh Thmey, Khan Sen Sok,<br />
+          Phnom Penh, Cambodia
+        </p>
+        <a href="https://www.facebook.com/caisedu" class="inline-block mt-4 w-8 h-8 border rounded-full text-center leading-8 hover:bg-white hover:text-[#02214d] transition">
+          <i class="fab fa-facebook-f">f</i>
+        </a>
+      </div>
+
+      <!-- Our Contacts -->
+      <div>
+        <h3 class="text-lg font-semibold mb-3 border-b border-white w-fit pb-1">Our Contacts</h3>
+        <p class="text-sm">Vice-Principal: Mr. Thach, July<br />
+          Phone: (+855) 96 270 9988</p>
+        <p class="text-sm mt-2">Vice-Principal: Mrs. Sieng, Socheata<br />
+          Phone: (+855) 92 247 604</p>
+        <p class="text-sm mt-2">Email: info@cais.edu.kh</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-3 border-b border-white w-fit pb-1">Quick Links</h3>
+        <ul class="text-sm space-y-2">
+          <li><a href="https://drive.google.com/file/d/1lJk1FRe0gHvwKqCcTP8ful9dnmTsYHFq/view?usp=sharing" target="_blank" class="hover:underline">› School Curriculum</a></li>
+          <li><a href="https://drive.google.com/file/d/1jjaEDeOag58ZMCuKKZCYejP6qsb2Xm__/view?usp=sharing" target="_blank" class="hover:underline">› School History</a></li>
+          <li><a hhref="https://drive.google.com/file/d/1PuA1HRQ7Wlxm6QT8OktzJtFMdKlca6xe/view?usp=sharing" target="_blank" class="hover:underline">› School Logo</a></li>
+          <li><a href="https://drive.google.com/file/d/1_Nhvn_tWPntOmTFBhtn9cQWbgPfNnDUn/view?usp=sharing" target="_blank" class="hover:underline">› School Calendar</a></li>
+          <li><a href="https://drive.google.com/file/d/1L7VDNpo1ZLoQRwDvJrhjelEF1ONw_DAq/view?usp=sharing" target="_blank" class="hover:underline">› Student Handbook</a></li>
+          <li><a href="https://opac.cais.edu.kh/" target="_blank" class="hover:underline">› Library</a></li>
+          <li><a href="https://lms.cais.edu.kh/" target="_blank" class="hover:underline">› Moodle</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Us -->
+      <div>
+        <h3 class="text-lg font-semibold mb-3 border-b border-white w-fit pb-1">Visit Us</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.5364050120324!2d104.88466527608405!3d11.585055088617178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109518149711e9f%3A0xb90146b821c0c40d!2sCambodia%20Adventist%20International%20School!5e0!3m2!1sen!2skh!4v1751354926393!5m2!1sen!2skh" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="mt-12 border-t border-blue-900 pt-4 text-center text-sm text-gray-300">
+      &copy; Copyright 2024 | All Rights Reserved by 
+      <a href="#" class="text-blue-300 hover:underline">
+        A Seventh-day Adventist Cambodian Mission Institution of Education.
+      </a>
+    </div>
+
+    <!-- Code of Honor button -->
+
+    <!-- Back to Top button -->
+    <a href="#top" class="fixed bottom-4 right-4 bg-yellow-500 text-white p-4 rounded-full shadow hover:bg-yellow-600">
+      <svg class="w-4 h-4 font-semibold" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M3.293 9.707a1 1 0 011.414 0L10 4.414l5.293 5.293a1 1 0 001.414-1.414l-6-6a1 1 0 00-1.414 0l-6 6a1 1 0 010 1.414z" clip-rule="evenodd" />
+      </svg>
+    </a>
+  </footer>
+
+  <!-- Burger Menu -->
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+  <!-- Toggle -->
+  <script>
+    function togglePanel(button) {
+      const content = button.nextElementSibling;
+      const icon = button.querySelector("span:last-child");
+
+      const isOpen = !content.classList.contains("hidden");
+      content.classList.toggle("hidden");
+      icon.textContent = isOpen ? "+" : "–";
+    }
+  </script>
+</body>
+</html>

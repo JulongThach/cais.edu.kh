@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cambodia Adventist International School</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    .animate-fadeInUp {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Top Contact Bar (scrolls away) -->
+  <div class="hidden sm:flex bg-[#002855] h-[50px] text-white text-sm py-4 px-4 justify-end items-center space-x-6">
+    <div class="flex items-center space-x-1">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-inbound-fill" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877zM15.854.146a.5.5 0 0 1 0 .708L11.707 5H14.5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 1 0v2.793L15.146.146a.5.5 0 0 1 .708 0"/>
+      </svg>
+      <span>+855 (12) 946-041 | +855 (98) 946-041</span>
+    </div>
+
+    <div class="flex items-center space-x-1">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+        <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+      </svg>
+      <span>info@cais.edu.kh</span>
+    </div>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgWA38XkUposkZZVW5WQ8J9O-kpMKZ2NbFsLlCRH6Nb1f8lg/viewform" target="_blank">
+      <div class="flex items-center space-x-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-square-fill" viewBox="0 0 16 16">
+          <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.93 4.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+        </svg>
+        <span>Apply Now</span>
+      </div>
+    </a>
+  </div>
+  <!-- Sticky Header -->
+  <header class="sticky top-0 left-0 bg-white shadow z-50 fade-slide">
+    <div class="max-w-7xl mx-auto h-[65px] px-4 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="#home" class="flex items-center space-x-2">
+        <img src="img/logo.png" alt="Logo" class="h-10 w-auto"> <!-- smaller logo -->
+      </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex space-x-10 relative text-sm font-medium">
+      <a href="home.html" class="hover:text-blue-700 transition duration-300">Home</a>
+
+      <!-- About Us Dropdown -->
+      <div class="relative group">
+        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
+          <span>About Us</span>
+          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div
+          class="absolute left-0 top-full mt-3 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
+        >
+          <a href="principal.html" class="block hover:bg-blue-50 border-b p-4">Principal's Message</a>
+          <a href="about.html" class="block hover:bg-blue-50 border-b p-4">Mission and Vision</a>
+          <a href="administration.html" class="block hover:bg-blue-50 border-b p-4">Administration</a>
+          <a href="faculty.html" class="block hover:bg-blue-50 border-b p-4">Faculty & Staff</a>
+          <a href="#online" class="block hover:bg-blue-50 border-b p-4">Contact Us</a>
+        </div>
+      </div>
+
+      <!-- Admission Dropdown -->
+      <div class="relative group">
+        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
+          <span>Admission</span>
+          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div
+          class="absolute left-0 top-full mt-2 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
+        >
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTqmfdzG4pRYjxWC40D5zTeRZU3qabje0LgjhoP_tvY-SzNw/viewform" target="_blank" class="block hover:bg-blue-50 border-b p-4">Returning Student</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgWA38XkUposkZZVW5WQ8J9O-kpMKZ2NbFsLlCRH6Nb1f8lg/viewform" target="_blank" class="block hover:bg-blue-50 border-b p-4">New Student</a>
+          <a href="https://drive.google.com/file/d/11SaWflOYNz6boXAKXAy7v6-prXdq19q5/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Tuition Fee</a>
+        </div>
+      </div>
+
+      <!-- Gallery Dropdown-->
+      <div class="relative group">
+        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
+          <span>Gallery</span>
+          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div
+          class="absolute left-0 top-full mt-3 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
+        >
+          <a href="https://drive.google.com/drive/folders/1Wv0efDPBOOdNPqvCkhw0dVclm7YHo_rA?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Activities</a>
+          <a href="https://drive.google.com/drive/folders/1ZBkTQnqoElsMOyYoNwF_mJlfrzaIdBH-?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Alumni</a>
+          <a href="https://drive.google.com/drive/folders/1_EKwG7MbNhsnmQh7z_BfoUhUuNCJrsrP?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Art Fair</a>
+          <a href="https://drive.google.com/drive/folders/1jaH8NTCQI8XZWESurX-atxUbcH_zcSVS?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Christmas Program</a>
+          <a href="https://drive.google.com/drive/folders/1PUlJT-mSzW63ORkK9VDpG_gKeFVpfSGT?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Cultural Show</a>
+          <a href="https://drive.google.com/drive/folders/1pxT8Ury7LjbsHNcAvIwMdE9ppZie4nBM?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Science Fair</a>
+          <a href="https://drive.google.com/drive/folders/1p2rBvtlde2xmylqqosR3EFx-hcpafpuT?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Sport</a>
+        </div>
+      </div>
+
+      <!-- Quick Link Dropdown -->
+      <div class="relative group">
+        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
+          <span>Quick Link</span>
+          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div
+          class="absolute left-0 top-full mt-3 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
+        >
+          <a href="https://drive.google.com/file/d/1lJk1FRe0gHvwKqCcTP8ful9dnmTsYHFq/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Curriculum</a>
+          <a href="https://drive.google.com/file/d/1jjaEDeOag58ZMCuKKZCYejP6qsb2Xm__/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School History</a>
+          <a href="https://drive.google.com/file/d/1PuA1HRQ7Wlxm6QT8OktzJtFMdKlca6xe/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Logo</a>
+          <a href="https://drive.google.com/file/d/1_Nhvn_tWPntOmTFBhtn9cQWbgPfNnDUn/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Handbook</a>
+          <a href="https://drive.google.com/file/d/1L7VDNpo1ZLoQRwDvJrhjelEF1ONw_DAq/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Calendar</a>
+          <a href="https://lms.cais.edu.kh/" target="_blank" class="block hover:bg-blue-50 border-b p-4">School LMS</a>
+          <a href="https://opac.cais.edu.kh/" target="_blank" class="block hover:bg-blue-50 border-b p-4">Library Catalog</a>
+        </div>
+      </div>
+    </nav>
+
+
+      <!-- Burger Button (Mobile) -->
+      <button id="menuBtn" class="md:hidden text-gray-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2 text-sm font-medium bg-white shadow">
+      <a href="#home" class="block hover:text-blue-700 transition duration-300">Home</a>
+      <a href="#about" class="block hover:text-blue-700 transition duration-300">About Us</a>
+      <a href="#bachelor" class="block hover:text-blue-700 transition duration-300">Bachelor Programs</a>
+      <a href="#master" class="block hover:text-blue-700 transition duration-300">Master Programs</a>
+      <a href="#online" class="block hover:text-blue-700 transition duration-300">Online Courses</a>
+      <a href="#faculty" class="block hover:text-blue-700 transition duration-300">Faculty</a>
+      <a href="#events" class="block hover:text-blue-700 transition duration-300">Events</a>
+      <a href="#contact" class="block hover:text-blue-700 transition duration-300">Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative h-[70vh] overflow-hidden">
+    <!-- Slides Wrapper -->
+    <div id="heroSlides" class="absolute top-0 left-0 w-full h-full z-0">
+      <!-- Slide 1 -->
+      <div class="absolute inset-0 opacity-100 transition-opacity duration-1000 slide active">
+        <img src="img/slider/slider.png"
+            class="w-full h-full object-cover" alt="Slide 1" />
+      </div>
+      <!-- Slide 2 -->
+      <div class="absolute inset-0 opacity-0 transition-opacity duration-1000 slide">
+        <img src="img/slider/slider-1.png"
+            class="w-full h-full object-cover" alt="Slide 2" />
+      </div>
+
+    </div>
+
+    <!-- Dots Navigation -->
+    <div id="slideDots" class="absolute bottom-4 w-full z-30 flex justify-center space-x-3">
+      <button class="w-3 h-3 rounded-full bg-[#002855] opacity-70 hover:opacity-100 transition active-dot"></button>
+      <button class="w-3 h-3 rounded-full bg-[#002855] opacity-50 hover:opacity-100 transition"></button>
+    </div>
+  </section>
+
+  <!-- Mission Spotlight -->
+  <section id="mission-spotlight" class="bg-white py-12 px-4">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-5">
+      
+      <!-- Left: Text Content -->
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold text-[#002855] mb-4 ">Mission Spotlight</h2>
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          In here education is more than books and grades. It's a journey of excellence, purpose, and faith. CAIS is a light of Christian influence.
+        </p>
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Discover inspiring stories and missions from our school through our weekly spotlight. Stay connected with us and learn how lives are being transformed every day.
+        </p>
+        <a href="https://www.youtube.com/@mediacais" target="_blank"
+          class="inline-block bg-[#002855] hover:bg-[#f7b512] text-white px-6 py-2 rounded-full transition shadow">
+          Watch More Videos
+        </a>
+      </div>
+
+      <!-- Right: Responsive Video -->
+      <div class="w-full">
+        <div class="aspect-w-16 aspect-h-9 w-full">
+          <iframe
+            class="w-full h-[400px] rounded shadow-md"
+            src="https://www.youtube.com/embed/wnswuLhMrFM?si=ohoBj7gf1bxqLYQe"
+            title="Mission Spotlight"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Student Life -->
+  <section id="student-life" class="bg-blue-50 py-16 px-4">
+    <div class="max-w-7xl mx-auto text-center mb-10">
+      <h2 class="text-3xl font-semibold text-[#002855]">Student's Life</h2>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        Life at CAIS is vibrant, inclusive, and full of opportunities. Enjoy a glimpse of our community in action.
+      </p>
+    </div>
+
+    <!-- Swiper -->
+    <div class="swiper studentLifeSwiper max-w-6xl mx-auto">
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide overflow-hidden shadow-lg">
+          <a href="https://drive.google.com/drive/folders/1RKlgziZgkrGUTfI-NtDnb5dHqwMRR6dZ?usp=sharing" target="_blank">
+            <img src="img/student_life/7.png" alt="Students in class" class="w-full h-full object-cover">
+          </a>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="swiper-slide overflow-hidden shadow-lg">
+          <a href="https://drive.google.com/drive/folders/1oogaD4ASc3iudPz0fHnZu-Kr8BQ_EHDJ" target="_blank">
+            <img src="img/student_life/1.png" alt="School event" class="w-full h-full object-cover">
+          </a>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide overflow-hidden shadow-lg">
+          <a href="https://drive.google.com/drive/folders/1p2rBvtlde2xmylqqosR3EFx-hcpafpuT?usp=sharing" target="_blank">
+            <img src="img/student_life/4.png" alt="Students in library" class="w-full h-full object-cover">
+          </a>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="swiper-slide overflow-hidden shadow-lg">
+          <a href="https://drive.google.com/drive/folders/1jaH8NTCQI8XZWESurX-atxUbcH_zcSVS?usp=sharing" target="_blank">
+            <img src="img/student_life/8.png" alt="Sports activity" class="w-full h-full object-cover">
+          </a>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="swiper-slide overflow-hidden shadow-lg">
+          <a href="https://drive.google.com/drive/folders/1jaH8NTCQI8XZWESurX-atxUbcH_zcSVS?usp=sharing" target="_blank">
+            <img src="img/student_life/9.png" alt="School event" class="w-full h-full object-cover">
+          </a>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="swiper-slide overflow-hidden shadow-lg">
+          <a href="https://drive.google.com/drive/folders/158sA2Ocpp1XPS0yEDj7jzig3XKngUYJ3?usp=sharing" target="_blank">
+            <img src="img/student_life/10.png" alt="School event" class="w-full h-full object-cover">
+          </a>
+        </div>
+
+        <!-- Slide 7 -->
+        <div class="swiper-slide overflow-hidden shadow-lg">
+          <a href="https://drive.google.com/drive/folders/1JcneP0QGIeyKGiDK3z3-mmC5Z7G_ebGD?usp=sharing" target="_blank">
+            <img src="img/student_life/3.png" alt="School event" class="w-full h-full object-cover">
+          </a>
+        </div>
+        
+        <!-- Slide 8 -->
+        <div class="swiper-slide overflow-hidden shadow-lg">
+          <a href="https://drive.google.com/drive/folders/1kHAEf92bpHYBh9Iuw2Q9a0NlnrNTDQsU?usp=sharing" target="_blank">
+            <img src="img/student_life/11.png" alt="School event" class="w-full h-full object-cover">
+          </a>
+        </div>
+      </div>
+
+      <!-- Pagination Dots -->
+      <div class="swiper-pagination mt-4 !static text-center"></div>
+    </div>
+  </section>
+
+  <!-- Church Service -->
+  <section id="churcher-service" class="bg-gray-100 py-16 px-6 md:px-20">
+    <div class="max-w-7xl mx-auto text-center mb-10">
+      <h2 class="text-3xl font-semibold text-[#002855]">Church Service</h2>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        “Be strong and courageous! Do not be afraid or discouraged. For the Lord your God is with you wherever you go.”
+      </p>
+      <p class="text-gray-600 mt-1 max-w-2xl mx-auto">
+        - Joshua 1:9 -
+      </p>
+    </div>
+    <div class="max-w-7xl mx-auto text-center mb-10">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white shadow hover:shadow-lg transition">
+          <img src="img/church_service/6.png" class="w-full h-48 object-cover" alt="Event">
+          <div class="p-5 text-left">
+            <a href="church-service/jan-11-25.html"><h4 class="text-xl font-bold text-[#002855]">Read More!</h4></a>
+            <p class="text-gray-500 text-sm mb-2">📅 January 11, 2025</p>
+            <p class="text-gray-600 text-sm">“Then said David to the Philistine, Thou comest to me with a sword, and with a spear, and with a shield.” - 1 Samuel 17:45 -</p>
+          </div>
+        </div>
+        <div class="bg-white shadow hover:shadow-lg transition">
+          <img src="img/church_service/5.png" class="w-full h-48 object-cover" alt="Event">
+          <div class="p-5 text-left">
+            <a href="church-service/oct-12-24.html"><h4 class="text-xl font-bold text-[#002855]">Read More!</h4></a>
+            <p class="text-gray-500 text-sm mb-2">📅 October 12, 2024</p>
+            <p class="text-gray-600 text-sm">This is such great news!” “May you always remember this day, and may God’s joy, love, and peace fill you through all your tomorrows.”</p>
+          </div>
+        </div>
+        <div class="bg-white shadow hover:shadow-lg transition">
+          <img src="img/church_service/4.png" class="w-full h-48 object-cover" alt="Event">
+          <div class="p-5 text-left">
+            <a href=""><h4 class="text-xl font-bold text-[#002855]">Read More!</h4></a>
+            <p class="text-gray-500 text-sm mb-2">📅 September 07, 2024</p>
+            <p class="text-gray-600 text-sm">Here are some pictures of our first Saturday Service at CAIS for the 2025 school year! Thank you to each one of you who joined us!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Extra-Curriculum -->
+  <section id="extra-curriculum" class="bg-blue-50 py-16 px-4">
+    <div class="max-w-7xl mx-auto text-center mb-10">
+      <h2 class="text-3xl font-semibold text-[#002855]">Academic Extra-Curriculum</h2>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        Let the children be taught that as they open their mindsto pure, loving thoughts and do loving and helpful deeds,they are clothing themselves with His beautiful garmentof character.
+      </p>
+      <p class="text-gray-600 mt-1 max-w-2xl mx-auto"> - Education, p. 249 - </p>
+    </div>
+
+    <!-- Swiper -->
+    <div class="swiper studentLifeSwiper max-w-6xl mx-auto">
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide overflow-hidden shadow-lg">
+          <img src="img/extra/1.png" alt="Students in class" class="w-full h-full object-cover">
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="swiper-slide overflow-hidden shadow-lg">
+          <img src="img/extra/2.png" alt="School event" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide overflow-hidden shadow-lg">
+          <img src="img/extra/3.png" alt="Students in library" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="swiper-slide overflow-hidden shadow-lg">
+          <img src="img/extra/4.png" alt="Sports activity" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="swiper-slide overflow-hidden shadow-lg">
+          <img src="img/extra/5.png" alt="School event" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <!-- Pagination Dots -->
+      <div class="swiper-pagination mt-4 !static text-center"></div>
+    </div>
+  </section>
+
+  <!-- Academic Honor -->
+  <section id="academic-honors" class="bg-white py-16 px-6">
+    <div class="max-w-7xl mx-auto text-center mb-10">
+      <h2 class="text-3xl font-semibold text-[#002855]">Academic Honors</h2>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        "Education is a work the effect of which will be seen throughout the ceaseless ages of eternity". - E.G. White.
+      </p>
+    </div>
+      <div class="max-w-7xl mx-auto mb-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+          <!-- Featured Student -->
+          <div class="md:col-span-2">
+            <div class="relative w-full max-h-[500px] overflow-hidden shadow">
+              <img id="featuredHonorImage"
+                  src="img/honors/jan-27-2025/1.jpg"
+                  alt="Featured Student"
+                  class="w-full h-full object-cover">
+              <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 w-full text-white p-4">
+                <h3 id="featuredName" class="text-2xl font-semibold">A Honor Roll</h3>
+                <p id="featuredDetail" class="text-sm">Grade 12 & Grade 09 | GPA: 4.0</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Student List -->
+          <div class="space-y-4 max-w-[300px] max-h-[500px] overflow-y-auto">
+            <button onclick="updateFeaturedHonor(
+              'img/honors/jan-27-2025/1.jpg',
+              'A Honor Roll',
+              'Grade 12 & Grade 09 | GPA: 4.0')"
+              class="hover:bg-gray-100 p-2 transition">
+              <img src="img/honors/jan-27-2025/1.jpg"
+                  class="w-[250px] object-cover" alt="A">
+            </button>
+
+            <button onclick="updateFeaturedHonor(
+              'img/honors/jan-27-2025/2.jpg',
+              'B Academic List',
+              'Kindergarten')"
+              class="hover:bg-gray-100 p-2 rounded transition">
+              <img src="img/honors/jan-27-2025/2.jpg"
+                  class="w-[250px] object-cover" alt="B">
+            </button>
+            <button onclick="updateFeaturedHonor(
+              'img/honors/jan-27-2025/4.jpg',
+              'B Academic List',
+              'Grade 01 A')"
+              class="hover:bg-gray-100 p-2 rounded transition">
+              <img src="img/honors/jan-27-2025/4.jpg"
+                  class="w-[250px] object-cover" alt="A">
+            </button>
+            <button onclick="updateFeaturedHonor(
+              'img/honors/jan-27-2025/3.jpg',
+              'B Academic List',
+              'Grade 01 B')"
+              class="hover:bg-gray-100 p-2 rounded transition">
+              <img src="img/honors/jan-27-2025/3.jpg"
+                  class="w-[250px] object-cover" alt="B">
+            </button>
+            <button onclick="updateFeaturedHonor(
+              'img/honors/jan-27-2025/5.jpg',
+              'B Academic List',
+              'Grade 02')"
+              class="hover:bg-gray-100 p-2 rounded transition">
+              <img src="img/honors/jan-27-2025/5.jpg"
+                  class="w-[250px] object-cover" alt="2">
+            </button>
+            <button onclick="updateFeaturedHonor(
+              'img/honors/jan-27-2025/6.jpg',
+              'B Academic List',
+              'Grade 03 A')"
+              class="hover:bg-gray-100 p-2 rounded transition">
+              <img src="img/honors/jan-27-2025/6.jpg"
+                  class="w-[250px] object-cover" alt="3A">
+            </button>
+            <button onclick="updateFeaturedHonor(
+              'img/honors/jan-27-2025/9.jpg',
+              'B Academic List',
+              'Grade 03 B')"
+              class="hover:bg-gray-100 p-2 rounded transition">
+              <img src="img/honors/jan-27-2025/9.jpg"
+                  class="w-[250px] object-cover" alt="3B">
+            </button>
+            <button onclick="updateFeaturedHonor(
+              'img/honors/jan-27-2025/7.jpg',
+              'B Academic List',
+              'Grade 04 A')"
+              class="hover:bg-gray-100 p-2 rounded transition">
+              <img src="img/honors/jan-27-2025/7.jpg"
+                  class="w-[250px] object-cover" alt="4">
+            </button>
+            <button onclick="updateFeaturedHonor(
+              'img/honors/jan-27-2025/8.jpg',
+              'B Academic List',
+              'Grade 04 B')"
+              class="hover:bg-gray-100 p-2 rounded transition">
+              <img src="img/honors/jan-27-2025/8.jpg"
+                  class="w-[250px] object-cover" alt="4B">
+            </button>
+            <button onclick="updateFeaturedHonor(
+              'img/honors/jan-27-2025/10.jpg',
+              'B Academic List',
+              'Grade 05 A')"
+              class="hover:bg-gray-100 p-2 rounded transition">
+              <img src="img/honors/jan-27-2025/10.jpg"
+                  class="w-[250px] object-cover" alt="5A">
+            </button>
+            <button onclick="updateFeaturedHonor(
+              'img/honors/jan-27-2025/11.jpg',
+              'B Academic List',
+              'Grade 05 B')"
+              class="hover:bg-gray-100 p-2 rounded transition">
+              <img src="img/honors/jan-27-2025/11.jpg"
+                  class="w-[250px] object-cover" alt="5B">
+            </button>
+            <button onclick="updateFeaturedHonor(
+              'img/honors/jan-27-2025/12.jpg',
+              'B Academic List',
+              'Grade 06 A')"
+              class="hover:bg-gray-100 p-2 rounded transition">
+              <img src="img/honors/jan-27-2025/12.jpg"
+                  class="w-[250px] object-cover" alt="6A">
+            </button>
+            <button onclick="updateFeaturedHonor(
+              'img/honors/jan-27-2025/13.jpg',
+              'B Academic List',
+              'Grade 06 B')"
+              class="hover:bg-gray-100 p-2 rounded transition">
+              <img src="img/honors/jan-27-2025/13.jpg"
+                  class="w-[250px] object-cover" alt="6B">
+            </button>
+            <button onclick="updateFeaturedHonor(
+              'img/honors/jan-27-2025/14.jpg',
+              'B Academic List',
+              'Grade 07 A')"
+              class="hover:bg-gray-100 p-2 rounded transition">
+              <img src="img/honors/jan-27-2025/14.jpg"
+                  class="w-[250px] object-cover" alt="7A">
+            </button>
+            <button onclick="updateFeaturedHonor(
+              'img/honors/jan-27-2025/15.jpg',
+              'B Academic List',
+              'Grade 07 B')"
+              class="hover:bg-gray-100 p-2 rounded transition">
+              <img src="img/honors/jan-27-2025/15.jpg"
+                  class="w-[250px] object-cover" alt="7B">
+            </button>
+            <button onclick="updateFeaturedHonor(
+              'img/honors/jan-27-2025/16.jpg',
+              'B Academic List',
+              'Grade 08')"
+              class="hover:bg-gray-100 p-2 rounded transition">
+              <img src="img/honors/jan-27-2025/16.jpg"
+                  class="w-[250px] object-cover" alt="8">
+            </button>
+            <button onclick="updateFeaturedHonor(
+              'img/honors/jan-27-2025/17.jpg',
+              'B Academic List',
+              'Grade 09')"
+              class="hover:bg-gray-100 p-2 rounded transition">
+              <img src="img/honors/jan-27-2025/17.jpg"
+                  class="w-[250px] object-cover" alt="9">
+            </button>
+            <button onclick="updateFeaturedHonor(
+              'img/honors/jan-27-2025/18.jpg',
+              'B Academic List',
+              'Grade 10 A')"
+              class="hover:bg-gray-100 p-2 rounded transition">
+              <img src="img/honors/jan-27-2025/18.jpg"
+                  class="w-[250px] object-cover" alt="10A">
+            </button>
+            <button onclick="updateFeaturedHonor(
+              'img/honors/jan-27-2025/19.jpg',
+              'B Academic List',
+              'Grade 10 B')"
+              class="hover:bg-gray-100 p-2 rounded transition">
+              <img src="img/honors/jan-27-2025/19.jpg"
+                  class="w-[250px] object-cover" alt="10B">
+            </button>
+            <button onclick="updateFeaturedHonor(
+              'img/honors/jan-27-2025/20.jpg',
+              'B Academic List',
+              'Grade 11')"
+              class="hover:bg-gray-100 p-2 rounded transition">
+              <img src="img/honors/jan-27-2025/20.jpg"
+                  class="w-[250px] object-cover" alt="11">
+            </button>
+            <button onclick="updateFeaturedHonor(
+              'img/honors/jan-27-2025/21.jpg',
+              'B Academic List',
+              'Grade 12')"
+              class="hover:bg-gray-100 p-2 rounded transition">
+              <img src="img/honors/jan-27-2025/21.jpg"
+                  class="w-[250px] object-cover" alt="12">
+            </button>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- Glance at CAIS -->
+  <section class="bg-[#002855] text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
+      
+      <!-- Students -->
+      <div>
+        <div class="flex justify-center mb-3">
+          <div class="w-12 h-12 flex items-center justify-center rounded-full border border-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-backpack3-fill" viewBox="0 0 16 16">
+              <path d="M5 10v3h6v-3h-1v.5a.5.5 0 0 1-1 0V10z"/>
+              <path d="M6 2v.341a6 6 0 0 0-1.308.653l-.416-1.247a1 1 0 0 0-1.749-.284l-.77 1.027a1 1 0 0 0-.149.917l.803 2.407A6 6 0 0 0 2 8v5.5A2.5 2.5 0 0 0 4.5 16h7a2.5 2.5 0 0 0 2.5-2.5V8c0-.771-.146-1.509-.41-2.186l.801-2.407a1 1 0 0 0-.148-.917l-.77-1.027a1 1 0 0 0-1.75.284l-.415 1.247A6 6 0 0 0 10 2.34V2a2 2 0 1 0-4 0m1 0a1 1 0 0 1 2 0v.083a6 6 0 0 0-2 0zm5.941 2.595a6 6 0 0 0-.8-.937l.531-1.595.77 1.027zM3.86 3.658a6 6 0 0 0-.8.937L2.557 3.09l.77-1.027zm.18 3.772a4 4 0 0 1 7.92 0 .5.5 0 1 1-.99.142 3 3 0 0 0-5.94 0 .5.5 0 1 1-.99-.142M4 9.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold">521</h3>
+        <p class="text-sm font-medium text-white/80">Students</p>
+      </div>
+
+      <!-- Teachers -->
+      <div>
+        <div class="flex justify-center mb-3">
+          <div class="w-12 h-12 flex items-center justify-center rounded-full border border-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-heart" viewBox="0 0 16 16">
+              <path d="M9 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h10s1 0 1-1-1-4-6-4-6 3-6 4m13.5-8.09c1.387-1.425 4.855 1.07 0 4.277-4.854-3.207-1.387-5.702 0-4.276Z"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold">31</h3>
+        <p class="text-sm font-medium text-white/80">Teachers</p>
+      </div>
+
+      <!-- Staff -->
+      <div>
+        <div class="flex justify-center mb-3">
+          <div class="w-12 h-12 flex items-center justify-center rounded-full border border-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-emoji-smile-fill" viewBox="0 0 16 16">
+              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5M4.285 9.567a.5.5 0 0 1 .683.183A3.5 3.5 0 0 0 8 11.5a3.5 3.5 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683M10 8c-.552 0-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5S10.552 8 10 8"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold">26</h3>
+        <p class="text-sm font-medium text-white/80">Staff</p>
+      </div>
+
+      <!-- Ratio -->
+      <div>
+        <div class="flex justify-center mb-3">
+          <div class="w-12 h-12 flex items-center justify-center rounded-full border border-white">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M4 4h4v4H4V4zm6 0h4v4h-4V4zm6 0h4v4h-4V4zM4 10h4v4H4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4zM4 16h4v4H4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4z"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold">14:1</h3>
+        <p class="text-sm font-medium text-white/80">Ratio</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events -->
+  <section id="events" class="bg-blue-50 py-16 px-6 md:px-20">
+    <div class="max-w-7xl mx-auto text-center mb-10">
+      <h2 class="text-3xl font-semibold text-[#002855]">Upcoming Events</h2>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        "Give instruction to a wise man, and he will be yet wiser: Teach a just man, and he will increase in learning"
+      </p>
+      <p class="text-gray-600 mt-1 max-w-2xl mx-auto"> - Proverbs 9:9 - </p>
+    </div>
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white shadow hover:shadow-lg transition">
+          <img src="img/events/3.png" class="w-full h-64 object-cover" alt="Event">
+          <div class="p-5">
+            <h4 class="text-xl font-bold text-[#002855]">First Chapel</h4>
+            <p class="text-gray-500 text-sm mb-2">📅 August 08, 2025</p>
+            <p class="text-gray-600 text-sm">Our first chapel of the school year is a special time to gather as a community in worship and reflection. Students, teachers, and staff come together to seek God’s guidance, give thanks, and dedicate the new academic journey to Him. It sets a spiritual tone for the year, reminding everyone of our shared faith and purpose at CAIS.</p>
+          </div>
+        </div>
+        <div class="bg-white shadow hover:shadow-lg transition">
+          <img src="img/events/2.png" class="w-full h-64 object-cover" alt="Event">
+          <div class="p-5">
+            <h4 class="text-xl font-bold text-[#002855]">School Start</h4>
+            <p class="text-gray-500 text-sm mb-2">📅 August 04, 2025</p>
+            <p class="text-gray-600 text-sm">The first day of school marks the beginning of a new chapter filled with excitement, friendships, and opportunities. Students are welcomed with warm smiles and guided into a supportive, Christ-centered environment. We are thrilled to start this journey together toward academic and spiritual excellence.</p>
+          </div>
+        </div>
+        <div class="bg-white shadow hover:shadow-lg transition">
+          <img src="img/events/1.png" class="w-full h-64 object-cover" alt="Event">
+          <div class="p-5">
+            <h4 class="text-xl font-bold text-[#002855]">Open House</h4>
+            <p class="text-gray-500 text-sm mb-2">📅 July 29, 2025</p>
+            <p class="text-gray-600 text-sm">Join us for our Open House to explore our vibrant campus, meet dedicated teachers, and discover the academic programs we offer. It's a great opportunity for families to ask questions and get a feel for student life at CAIS. Come see what makes our school a nurturing place for learning and growth.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#02214d] text-white py-12 px-6 relative">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      
+      <!-- Campus Address -->
+      <div>
+        <h3 class="text-lg font-semibold mb-3 border-b border-white w-fit pb-1">Campus Address</h3>
+        <p class="text-sm leading-relaxed">
+          #419, Street Rada, Phum Tum Nub, <br />
+          Sangkat Phnom Penh Thmey, Khan Sen Sok,<br />
+          Phnom Penh, Cambodia
+        </p>
+        <a href="https://www.facebook.com/caisedu" class="inline-block mt-4 w-8 h-8 border rounded-full text-center leading-8 hover:bg-white hover:text-[#02214d] transition">
+          <i class="fab fa-facebook-f">f</i>
+        </a>
+      </div>
+
+      <!-- Our Contacts -->
+      <div>
+        <h3 class="text-lg font-semibold mb-3 border-b border-white w-fit pb-1">Our Contacts</h3>
+        <p class="text-sm">Vice-Principal: Mr. Thach, July<br />
+          Phone: (+855) 96 270 9988</p>
+        <p class="text-sm mt-2">Vice-Principal: Mrs. Sieng, Socheata<br />
+          Phone: (+855) 92 247 604</p>
+        <p class="text-sm mt-2">Email: info@cais.edu.kh</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-3 border-b border-white w-fit pb-1">Quick Links</h3>
+        <ul class="text-sm space-y-2">
+          <li><a href="https://drive.google.com/file/d/1lJk1FRe0gHvwKqCcTP8ful9dnmTsYHFq/view?usp=sharing" target="_blank" class="hover:underline">› School Curriculum</a></li>
+          <li><a href="https://drive.google.com/file/d/1jjaEDeOag58ZMCuKKZCYejP6qsb2Xm__/view?usp=sharing" target="_blank" class="hover:underline">› School History</a></li>
+          <li><a hhref="https://drive.google.com/file/d/1PuA1HRQ7Wlxm6QT8OktzJtFMdKlca6xe/view?usp=sharing" target="_blank" class="hover:underline">› School Logo</a></li>
+          <li><a href="https://drive.google.com/file/d/1_Nhvn_tWPntOmTFBhtn9cQWbgPfNnDUn/view?usp=sharing" target="_blank" class="hover:underline">› School Calendar</a></li>
+          <li><a href="https://drive.google.com/file/d/1L7VDNpo1ZLoQRwDvJrhjelEF1ONw_DAq/view?usp=sharing" target="_blank" class="hover:underline">› Student Handbook</a></li>
+          <li><a href="https://opac.cais.edu.kh/" target="_blank" class="hover:underline">› Library</a></li>
+          <li><a href="https://lms.cais.edu.kh/" target="_blank" class="hover:underline">› Moodle</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Us -->
+      <div>
+        <h3 class="text-lg font-semibold mb-3 border-b border-white w-fit pb-1">Visit Us</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.5364050120324!2d104.88466527608405!3d11.585055088617178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109518149711e9f%3A0xb90146b821c0c40d!2sCambodia%20Adventist%20International%20School!5e0!3m2!1sen!2skh!4v1751354926393!5m2!1sen!2skh" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="mt-12 border-t border-blue-900 pt-4 text-center text-sm text-gray-300">
+      &copy; Copyright 2024 | All Rights Reserved by 
+      <a href="#" class="text-blue-300 hover:underline">
+        A Seventh-day Adventist Cambodian Mission Institution of Education.
+      </a>
+    </div>
+
+    <!-- Code of Honor button -->
+
+    <!-- Back to Top button -->
+    <a href="#top" class="fixed bottom-4 right-4 bg-yellow-500 text-white p-4 rounded-full shadow hover:bg-yellow-600">
+      <svg class="w-4 h-4 font-semibold" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M3.293 9.707a1 1 0 011.414 0L10 4.414l5.293 5.293a1 1 0 001.414-1.414l-6-6a1 1 0 00-1.414 0l-6 6a1 1 0 010 1.414z" clip-rule="evenodd" />
+      </svg>
+    </a>
+  </footer>
+
+  <!-- Burger Menu -->
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+  <script>
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll("#slideDots button");
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("opacity-100", i === index);
+        slide.classList.toggle("opacity-0", i !== index);
+        slide.classList.toggle("z-10", i === index);
+      });
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("opacity-70", i === index);
+        dot.classList.toggle("opacity-50", i !== index);
+      });
+
+      current = index;
+    }
+
+    // Auto slide
+    setInterval(() => {
+      const next = (current + 1) % slides.length;
+      showSlide(next);
+    }, 8000);
+
+    // Dot click navigation
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => showSlide(i));
+    });
+
+    showSlide(0);
+  </script>
+  <!-- Slider -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      new Swiper(".studentLifeSwiper", {
+        loop: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        slidesPerView: 1,
+        spaceBetween: 20,
+        breakpoints: {
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        },
+      });
+    });
+  </script>
+  <!-- Academic Honor -->
+  <script>
+    function updateFeaturedHonor(imageUrl, name, detail) {
+      document.getElementById("featuredHonorImage").src = imageUrl;
+      document.getElementById("featuredName").textContent = name;
+      document.getElementById("featuredDetail").textContent = detail;
+    }
+  </script>
+</body>
+</html>
