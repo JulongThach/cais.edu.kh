@@ -1,364 +1,293 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cambodia Adventist International School</title>
+  <title>Administration | Cambodia Adventist International School</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="img/favicon.png">
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Font (Kept Poppins as requested) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
 
   <style>
     body {
       font-family: 'Poppins', sans-serif;
     }
-    html {
-      scroll-behavior: smooth;
-    }
-    .animate-fadeInUp {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s ease-out forwards;
+    .admin-card:hover img {
+      transform: scale(1.04);
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-  <!-- Top Contact Bar (scrolls away) -->
-  <div class="hidden sm:flex bg-[#002855] h-[50px] text-white text-sm py-4 px-4 justify-end items-center space-x-6">
-    <div class="flex items-center space-x-1">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-inbound-fill" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877zM15.854.146a.5.5 0 0 1 0 .708L11.707 5H14.5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 1 0v2.793L15.146.146a.5.5 0 0 1 .708 0"/>
-      </svg>
-      <span>+855 (12) 946-041 | +855 (70) 946-041</span>
-    </div>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
 
-    <div class="flex items-center space-x-1">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
-        <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
-      </svg>
-      <span>info@cais.edu.kh</span>
-    </div>
-
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgWA38XkUposkZZVW5WQ8J9O-kpMKZ2NbFsLlCRH6Nb1f8lg/viewform" target="_blank">
-      <div class="flex items-center space-x-1">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-square-fill" viewBox="0 0 16 16">
-          <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.93 4.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+  <!-- Top Contact Bar -->
+  <div class="hidden lg:flex bg-[#002855] text-slate-200 text-xs tracking-wide py-3 px-8 justify-between items-center border-b border-blue-900/50">
+    <div class="flex items-center space-x-6">
+      <div class="flex items-center space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="opacity-80" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
         </svg>
-        <span>Apply Now</span>
+        <span>+855 (12) 946-041 / +855 (70) 946-041</span>
       </div>
+      <div class="flex items-center space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="opacity-80" viewBox="0 0 16 16">
+          <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+        </svg>
+        <a href="mailto:info@cais.edu.kh" class="hover:text-amber-400 transition">info@cais.edu.kh</a>
+      </div>
+    </div>
+    <a href="https://system.cais.edu.kh/registration/form" target="_blank" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-semibold px-4 py-1 rounded transition text-xs shadow-sm">
+      Apply Now
     </a>
   </div>
-   <!-- Sticky Header -->
-  <header class="sticky top-0 left-0 bg-white shadow z-50 fade-slide">
-    <div class="max-w-7xl mx-auto h-[65px] px-4 flex justify-between items-center">
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 bg-white/95 backdrop-blur-md shadow-md z-50 border-b border-slate-100 transition-all">
+    <div class="max-w-7xl mx-auto h-20 px-6 flex justify-between items-center">
       <!-- Logo -->
-      <a href="index.html" class="flex items-center space-x-2">
-        <img src="img/logo.png" alt="Logo" class="h-10 w-auto"> <!-- smaller logo -->
+      <a href="index.html" class="flex items-center transition transform hover:scale-[1.02]">
+        <img src="img/logo.png" alt="CAIS Logo" class="h-10 w-auto">
       </a>
 
-    <!-- Desktop Nav -->
-    <nav class="hidden md:flex space-x-10 relative text-sm font-medium">
-      <a href="index.html" class="hover:text-blue-700 transition duration-300">Home</a>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8 text-[14px] font-medium tracking-wide text-slate-600">
+        <a href="index.html" class="hover:text-[#002855] transition">Home</a>
 
-      <!-- About Us Dropdown -->
-      <div class="relative group">
-        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
-          <span>About Us</span>
-          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div
-          class="absolute left-0 top-full mt-3 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
-        >
-          <a href="principal.html" class="block hover:bg-blue-50 border-b p-4">Principal's Message</a>
-          <a href="about.html" class="block hover:bg-blue-50 border-b p-4">Mission and Vision</a>
-          <a href="administration.html" class="block hover:bg-blue-50 border-b p-4">Administration</a>
-          <a href="faculty.html" class="block hover:bg-blue-50 border-b p-4">Faculty & Staff</a>
-          <a href="contact.html" class="block hover:bg-blue-50 border-b p-4">Contact Us</a>
+        <!-- Dropdowns styled dynamically -->
+        <div class="relative group py-2">
+          <button class="hover:text-[#002855] text-slate-900 font-semibold transition flex items-center space-x-1">
+            <span>About Us</span>
+            <svg class="w-4 h-4 opacity-70 transition group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="absolute left-0 top-full w-56 bg-white border border-slate-100 rounded-lg shadow-xl py-2 opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100 group-hover:visible transition-all duration-200 origin-top">
+            <a href="principal.html" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Principal's Message</a>
+            <a href="about.html" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Mission and Vision</a>
+            <a href="administration.html" class="block px-4 py-2.5 bg-slate-50 text-[#002855] border-l-2 border-[#002855] font-semibold transition">Administration</a>
+            <a href="faculty.html" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Faculty & Staff</a>
+            <a href="contact.html" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Contact Us</a>
+          </div>
         </div>
-      </div>
 
-      <!-- Admission Dropdown -->
-      <div class="relative group">
-        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
-          <span>Admission</span>
-          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div
-          class="absolute left-0 top-full mt-2 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
-        >
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTqmfdzG4pRYjxWC40D5zTeRZU3qabje0LgjhoP_tvY-SzNw/viewform" target="_blank" class="block hover:bg-blue-50 border-b p-4">Returning Student</a>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgWA38XkUposkZZVW5WQ8J9O-kpMKZ2NbFsLlCRH6Nb1f8lg/viewform" target="_blank" class="block hover:bg-blue-50 border-b p-4">New Student</a>
-          <a href="https://drive.google.com/file/d/1y5-8EsAVVyLW6_8J4_A3EqG9s2YEMh-P/view?usp=drive_link" target="_blank" class="block hover:bg-blue-50 border-b p-4">Tuition Fee</a>
+        <div class="relative group py-2">
+          <button class="hover:text-[#002855] transition flex items-center space-x-1">
+            <span>Admission</span>
+            <svg class="w-4 h-4 opacity-70 transition group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="absolute left-0 top-full w-56 bg-white border border-slate-100 rounded-lg shadow-xl py-2 opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100 group-hover:visible transition-all duration-200 origin-top">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTqmfdzG4pRYjxWC40D5zTeRZU3qabje0LgjhoP_tvY-SzNw/viewform" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Returning Student</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgWA38XkUposkZZVW5WQ8J9O-kpMKZ2NbFsLlCRH6Nb1f8lg/viewform" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">New Student</a>
+            <a href="https://drive.google.com/file/d/1y5-8EsAVVyLW6_8J4_A3EqG9s2YEMh-P/view?usp=drive_link" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Tuition Fee</a>
+          </div>
         </div>
-      </div>
 
-      <!-- Gallery Dropdown-->
-      <div class="relative group">
-        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
-          <span>Gallery</span>
-          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div
-          class="absolute left-0 top-full mt-3 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
-        >
-          <a href="https://drive.google.com/drive/folders/1Wv0efDPBOOdNPqvCkhw0dVclm7YHo_rA?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Activities</a>
-          <a href="https://drive.google.com/drive/folders/1ZBkTQnqoElsMOyYoNwF_mJlfrzaIdBH-?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Alumni</a>
-          <a href="https://drive.google.com/drive/folders/1_EKwG7MbNhsnmQh7z_BfoUhUuNCJrsrP?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Art Fair</a>
-          <a href="https://drive.google.com/drive/folders/1jaH8NTCQI8XZWESurX-atxUbcH_zcSVS?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Christmas Program</a>
-          <a href="https://drive.google.com/drive/folders/1PUlJT-mSzW63ORkK9VDpG_gKeFVpfSGT?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Cultural Show</a>
-          <a href="https://drive.google.com/drive/folders/1pxT8Ury7LjbsHNcAvIwMdE9ppZie4nBM?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Science Fair</a>
-          <a href="https://drive.google.com/drive/folders/1p2rBvtlde2xmylqqosR3EFx-hcpafpuT?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Sports</a>
+        <div class="relative group py-2">
+          <button class="hover:text-[#002855] transition flex items-center space-x-1">
+            <span>Gallery</span>
+            <svg class="w-4 h-4 opacity-70 transition group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="absolute right-0 top-full w-60 bg-white border border-slate-100 rounded-lg shadow-xl py-2 opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100 group-hover:visible transition-all duration-200 origin-top max-h-96 overflow-y-auto">
+            <a href="https://drive.google.com/drive/folders/1Wv0efDPBOOdNPqvCkhw0dVclm7YHo_rA?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Activities</a>
+            <a href="https://drive.google.com/drive/folders/1ZBkTQnqoElsMOyYoNwF_mJlfrzaIdBH-?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Alumni</a>
+            <a href="https://drive.google.com/drive/folders/1_EKwG7MbNhsnmQh7z_BfoUhUuNCJrsrP?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Art Fair</a>
+            <a href="https://drive.google.com/drive/folders/1jaH8NTCQI8XZWESurX-atxUbcH_zcSVS?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Christmas Program</a>
+            <a href="https://drive.google.com/drive/folders/1PUlJT-mSzW63ORkK9VDpG_gKeFVpfSGT?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Cultural Show</a>
+            <a href="https://drive.google.com/drive/folders/1pxT8Ury7LjbsHNcAvIwMdE9ppZie4nBM?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Science Fair</a>
+            <a href="https://drive.google.com/drive/folders/1p2rBvtlde2xmylqqosR3EFx-hcpafpuT?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Sports</a>
+          </div>
         </div>
-      </div>
 
-      <!-- Quick Link Dropdown -->
-      <div class="relative group">
-        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
-          <span>Quick Link</span>
-          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div
-          class="absolute left-0 top-full mt-3 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
-        >
-          <a href="https://drive.google.com/file/d/1kXuuONxd98njMy81rev3xRPDnAB7z9sT/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Academic Recognition</a>
-          <a href="https://drive.google.com/file/d/1lJk1FRe0gHvwKqCcTP8ful9dnmTsYHFq/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Curriculum</a>
-          <a href="https://drive.google.com/file/d/1jjaEDeOag58ZMCuKKZCYejP6qsb2Xm__/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School History</a>
-          <a href="https://drive.google.com/file/d/1PuA1HRQ7Wlxm6QT8OktzJtFMdKlca6xe/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Logo</a>
-          <a href="https://drive.google.com/file/d/1_Nhvn_tWPntOmTFBhtn9cQWbgPfNnDUn/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Handbook</a>
-          <a href="https://drive.google.com/file/d/1g6esWqYipTlW75T7wuYsOvueWXVSwbU-/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Calendar</a>
-          <a href="https://lms.cais.edu.kh/" target="_blank" class="block hover:bg-blue-50 border-b p-4">School LMS</a>
-          <a href="https://opac.cais.edu.kh/" target="_blank" class="block hover:bg-blue-50 border-b p-4">Library Catalog</a>
-          <a href="https://sites.google.com/caisedu.com/guidance-resources/home" target="_blank" class="block hover:bg-blue-50 border-b p-4">University and Careers</a>
-          <a href="https://drive.google.com/file/d/1SFacyL3k_Xg_yPzCnY4_HnlvJ4ppRBnp/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Yearbook</a>
+        <div class="relative group py-2">
+          <button class="hover:text-[#002855] transition flex items-center space-x-1">
+            <span>Quick Link</span>
+            <svg class="w-4 h-4 opacity-70 transition group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="absolute right-0 top-full w-64 bg-white border border-slate-100 rounded-lg shadow-xl py-2 opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100 group-hover:visible transition-all duration-200 origin-top max-h-96 overflow-y-auto">
+            <a href="https://drive.google.com/file/d/1kXuuONxd98njMy81rev3xRPDnAB7z9sT/view?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Academic Recognition</a>
+            <a href="https://drive.google.com/file/d/1lJk1FRe0gHvwKqCcTP8ful9dnmTsYHFq/view?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">School Curriculum</a>
+            <a href="https://drive.google.com/file/d/1jjaEDeOag58ZMCuKKZCYejP6qsb2Xm__/view?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">School History</a>
+            <a href="https://drive.google.com/file/d/1PuA1HRQ7Wlxm6QT8OktzJtFMdKlca6xe/view?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">School Logo</a>
+            <a href="https://drive.google.com/file/d/1_Nhvn_tWPntOmTFBhtn9cQWbgPfNnDUn/view?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">School Handbook</a>
+            <a href="https://drive.google.com/file/d/1g6esWqYipTlW75T7wuYsOvueWXVSwbU-/view?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">School Calendar</a>
+            <a href="https://drive.google.com/file/d/1SFacyL3k_Xg_yPzCnY4_HnlvJ4ppRBnp/view?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Yearbook</a>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
 
-
-      <!-- Burger Button (Mobile) -->
-      <button id="menuBtn" class="md:hidden text-gray-800 focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
+      <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="md:hidden text-slate-800 focus:outline-none p-2 rounded-lg hover:bg-slate-100 transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
       </button>
     </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2 text-sm font-medium bg-white shadow">
-      <a href="#home" class="block hover:text-blue-700 transition duration-300">Home</a>
-      <div class="relative group">
-        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
-          <span>About Us</span>
-          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div
-          class="absolute left-0 top-full mt-3 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
-        >
-          <a href="principal.html" class="block hover:bg-blue-50 border-b p-4">Principal's Message</a>
-          <a href="about.html" class="block hover:bg-blue-50 border-b p-4">Mission and Vision</a>
-          <a href="administration.html" class="block hover:bg-blue-50 border-b p-4">Administration</a>
-          <a href="faculty.html" class="block hover:bg-blue-50 border-b p-4">Faculty & Staff</a>
-          <a href="contact.html" class="block hover:bg-blue-50 border-b p-4">Contact Us</a>
-        </div>
+    <!-- Mobile Navigation Stack Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3 shadow-inner">
+      <a href="index.html" class="block font-medium text-slate-600 hover:text-[#002855]">Home</a>
+      <div class="border-t border-slate-100 pt-2 space-y-1">
+        <p class="text-xs font-bold uppercase text-slate-400 tracking-wider">About Us</p>
+        <a href="principal.html" class="block pl-2 py-1 text-sm text-slate-600">Principal's Message</a>
+        <a href="about.html" class="block pl-2 py-1 text-sm text-slate-600">Mission and Vision</a>
+        <a href="administration.html" class="block pl-2 py-1 text-sm text-[#002855] font-semibold">Administration</a>
+        <a href="faculty.html" class="block pl-2 py-1 text-sm text-slate-600">Faculty & Staff</a>
+        <a href="contact.html" class="block pl-2 py-1 text-sm text-slate-600">Contact Us</a>
       </div>
-      <!-- Admission Dropdown -->
-      <div class="relative group">
-        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
-          <span>Admission</span>
-          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div
-          class="absolute left-0 top-full mt-2 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
-        >
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTqmfdzG4pRYjxWC40D5zTeRZU3qabje0LgjhoP_tvY-SzNw/viewform" target="_blank" class="block hover:bg-blue-50 border-b p-4">Returning Student</a>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgWA38XkUposkZZVW5WQ8J9O-kpMKZ2NbFsLlCRH6Nb1f8lg/viewform" target="_blank" class="block hover:bg-blue-50 border-b p-4">New Student</a>
-          <a href="https://drive.google.com/file/d/1gtRFEG-e-2_Eki0beZBAwG9D65vdOoUw/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Tuition Fee</a>
-        </div>
-      </div>
-      <!-- Gallery Dropdown-->
-      <div class="relative group">
-        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
-          <span>Gallery</span>
-          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div
-          class="absolute left-0 top-full mt-3 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
-        >
-          <a href="https://drive.google.com/drive/folders/1Wv0efDPBOOdNPqvCkhw0dVclm7YHo_rA?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Activities</a>
-          <a href="https://drive.google.com/drive/folders/1ZBkTQnqoElsMOyYoNwF_mJlfrzaIdBH-?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Alumni</a>
-          <a href="https://drive.google.com/drive/folders/1_EKwG7MbNhsnmQh7z_BfoUhUuNCJrsrP?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Art Fair</a>
-          <a href="https://drive.google.com/drive/folders/1jaH8NTCQI8XZWESurX-atxUbcH_zcSVS?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Christmas Program</a>
-          <a href="https://drive.google.com/drive/folders/1PUlJT-mSzW63ORkK9VDpG_gKeFVpfSGT?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Cultural Show</a>
-          <a href="https://drive.google.com/drive/folders/1pxT8Ury7LjbsHNcAvIwMdE9ppZie4nBM?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Science Fair</a>
-          <a href="https://drive.google.com/drive/folders/1p2rBvtlde2xmylqqosR3EFx-hcpafpuT?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Sport</a>
-        </div>
-      </div>
-      <div class="relative group">
-        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
-          <span>Quick Link</span>
-          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div
-          class="absolute left-0 top-full mt-3 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
-        >
-          <a href="https://drive.google.com/file/d/1kXuuONxd98njMy81rev3xRPDnAB7z9sT/view?usp=drive_link" target="_blank" class="block hover:bg-blue-50 border-b p-4">Academic Recognition</a>
-          <a href="https://drive.google.com/file/d/1lJk1FRe0gHvwKqCcTP8ful9dnmTsYHFq/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Curriculum</a>
-          <a href="https://drive.google.com/file/d/1jjaEDeOag58ZMCuKKZCYejP6qsb2Xm__/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School History</a>
-          <a href="https://drive.google.com/file/d/1PuA1HRQ7Wlxm6QT8OktzJtFMdKlca6xe/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Logo</a>
-          <a href="https://drive.google.com/file/d/1_Nhvn_tWPntOmTFBhtn9cQWbgPfNnDUn/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Handbook</a>
-          <a href="https://drive.google.com/file/d/1g6esWqYipTlW75T7wuYsOvueWXVSwbU-/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Calendar</a>
-          <a href="https://lms.cais.edu.kh/" target="_blank" class="block hover:bg-blue-50 border-b p-4">School LMS</a>
-          <a href="https://opac.cais.edu.kh/" target="_blank" class="block hover:bg-blue-50 border-b p-4">Library Catalog</a>
-          <a href="https://sites.google.com/caisedu.com/guidance-resources/home" target="_blank" class="block hover:bg-blue-50 border-b p-4">University and Careers</a>
-        </div>
-      </div>
+      <!-- Additional basic mobile sections could follow layout pattern if needed -->
     </div>
   </header>
 
+  <!-- Main Content Body Area -->
+  <main class="flex-grow py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+    
+    <!-- Editorial Quote Container Block -->
+    <div class="max-w-4xl mx-auto mb-16 bg-white border-l-4 border-cyan-500 rounded-r-2xl shadow-sm p-8 relative overflow-hidden">
+      <div class="absolute -right-6 -bottom-10 text-slate-100 pointer-events-none font-serif text-[180px] leading-none opacity-40 select-none">“</div>
+      <p class="text-slate-600 leading-relaxed italic relative z-10 text-base sm:text-lg">
+        “Our ideas of education take too narrow and too low a range. There is need of a broader scope, a higher aim. True education means more than the pursual of a certain course of study. It means more than a preparation for the life that now is. It has to do with the whole being, and with the whole period of existence possible to man. It is the harmonious development of the physical, the mental, and the spiritual powers. It prepares the student for the joy of service in this world and for the higher joy of wider service in the world to come.”
+      </p>
+      <p class="mt-4 text-slate-900 font-semibold tracking-wide text-sm flex items-center">
+        <span class="w-6 h-[2px] bg-amber-400 inline-block mr-3"></span>
+        Ellen G. White, Education
+      </p>
+    </div>
 
-  <!-- President Message Section -->
-  <section id="message" class="py-8 px-4 sm:px-6 lg:px-8 bg-white">
-    <div class="max-w-6xl mx-auto px-4 py-6">
-      <!-- Header -->
-      <h2 class="text-3xl font-bold text-[#002855] mb-2">Administration</h2>
-      <div class="h-1 w-32 bg-cyan-500 mb-1"></div>
-      <div class="h-1 w-40 bg-yellow-400 inline-block mr-2"></div>
-      <div class="h-1 w-6 bg-pink-700 inline-block"></div>
-      <p class="mt-5">“Our ideas of education take too narrow and too low a range. There is need of a broader scope, a higher aim. True education means more than the pursual of a certain course of study. It means more than a preparation for the life that now is. It has to do with the whole being, and with the whole period of existence possible to man. It is the harmonious development of the physical, the mental, and the spiritual powers. It prepares the student for the joy of service in this world and for the higher joy of wider service in the world to come.”
-      </p>
-      <p class="mt-3">
-        – Ellen G. White, Education –
-      </p>
-      <div class="grid md:grid-cols-6 gap-6 text-center mt-5">
-        <div class="bg-gray-100 p-1 shadow">
-          <img src="img/administration/1.png" alt="principal" class="w-64 mx-auto mb-4">
-          <h4 class="font-bold">Mr. Dean Edwards</h4>
-          <p class="text-sm text-gray-600">Principal</p>
+    <!-- Administration Showcase Header Segment -->
+    <div class="text-center mb-16">
+      <h1 class="text-2xl sm:text-3xl font-bold text-[#002855] tracking-tight mb-3">School Administration</h1>
+      <p class="text-slate-500 max-w-md mx-auto text-sm sm:text-base">The dedicated leadership team guiding Cambodia Adventist International School toward holistic excellence.</p>
+      <div class="flex justify-center items-center space-x-1 mt-6">
+        <span class="h-1 w-12 rounded-full bg-cyan-500"></span>
+        <span class="h-1 w-4 rounded-full bg-amber-400"></span>
+        <span class="h-1 w-2 rounded-full bg-rose-500"></span>
+      </div>
+    </div>
+
+    <!-- Administrative Personnel Layout Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      
+      <!-- Principal Profile -->
+      <div class="admin-card bg-white rounded-xl shadow-sm hover:shadow-xl border border-slate-100 overflow-hidden transition-all duration-300 flex flex-col justify-between">
+        <div class="overflow-hidden bg-slate-100 aspect-[4/5] relative">
+          <img src="img/administration/Sieng Kimsreng.png" alt="Mr. Sieng Kimsreng" class="w-full h-full object-cover object-top transition duration-500">
         </div>
-        <div class="bg-gray-100 p-1 shadow">
-          <img src="img/administration/2.png" alt="academic" class="w-64 mx-auto mb-4">
-          <h4 class="font-bold">Dr. Helen Edwards</h4>
-          <p class="text-sm text-gray-600">Academic Director</p>
+        <div class="p-5 text-center bg-white relative z-10 flex-grow flex flex-col justify-end">
+          <h3 class="font-bold text-slate-900 text-base tracking-tight mb-1">Mr. Sieng Kimsreng</h3>
+          <span class="inline-block bg-blue-50 text-[#002855] text-xs font-semibold px-3 py-1 rounded-full mt-2">
+            Principal
+          </span>
         </div>
-        <div class="bg-gray-100 p-1 shadow">
-          <img src="img/administration/3.png" alt="finance" class="w-64 mx-auto mb-4">
-          <h4 class="font-bold">Mrs. Chin Bopha</h4>
-          <p class="text-sm text-gray-600">Business Manager</p>
+      </div>
+
+      <!-- Academic Director Profile -->
+      <div class="admin-card bg-white rounded-xl shadow-sm hover:shadow-xl border border-slate-100 overflow-hidden transition-all duration-300 flex flex-col justify-between">
+        <div class="overflow-hidden bg-slate-100 aspect-[4/5] relative">
+          <img src="img/administration/Prak Chansopheak.png" alt="Mrs. Prak Chansopheak" class="w-full h-full object-cover object-top transition duration-500">
         </div>
-        <div class="bg-gray-100 p-1 shadow">
-          <img src="img/administration/7.png" alt="vice" class="w-64 mx-auto mb-4">
-          <h4 class="font-bold">Ms. Ka Daneth</h4>
-          <p class="text-sm text-gray-600">Academic Director (Trainee)</p>
+        <div class="p-5 text-center bg-white relative z-10 flex-grow flex flex-col justify-end">
+          <h3 class="font-bold text-slate-900 text-base tracking-tight mb-1">Mrs. Prak Chansopheak</h3>
+          <span class="inline-block bg-blue-50 text-[#002855] text-xs font-semibold px-3 py-1 rounded-full mt-2">
+            Academic Director
+          </span>
         </div>
-        <div class="bg-gray-100 p-1 shadow">
-          <img src="img/administration/6.png" alt="vice" class="w-64 mx-auto mb-4">
-          <h4 class="font-bold">Mr. Ka Sadam</h4>
-          <p class="text-sm text-gray-600">Student Disciplinary and Services Director</p>
+      </div>
+
+      <!-- Business Manager Profile -->
+      <div class="admin-card bg-white rounded-xl shadow-sm hover:shadow-xl border border-slate-100 overflow-hidden transition-all duration-300 flex flex-col justify-between">
+        <div class="overflow-hidden bg-slate-100 aspect-[4/5] relative">
+          <img src="img/administration/Chin Bopha.png" alt="Mrs. Chin Bopha" class="w-full h-full object-cover object-top transition duration-500">
         </div>
-        <div class="bg-gray-100 p-1 shadow">
-          <img src="img/administration/8.png" alt="vice" class="w-64 mx-auto mb-4">
-          <h4 class="font-bold">Mr. Sieng Kimsreng</h4>
-          <p class="text-sm text-gray-600">Registrar</p>
+        <div class="p-5 text-center bg-white relative z-10 flex-grow flex flex-col justify-end">
+          <h3 class="font-bold text-slate-900 text-base tracking-tight mb-1">Mrs. Chin Bopha</h3>
+          <span class="inline-block bg-blue-50 text-[#002855] text-xs font-semibold px-3 py-1 rounded-full mt-2">
+            Business Manager
+          </span>
+        </div>
+      </div>
+
+      <!-- Services Director Profile -->
+      <div class="admin-card bg-white rounded-xl shadow-sm hover:shadow-xl border border-slate-100 overflow-hidden transition-all duration-300 flex flex-col justify-between">
+        <div class="overflow-hidden bg-slate-100 aspect-[4/5] relative">
+          <img src="img/administration/Ka Sadam.png" alt="Mr. Ka Sadam" class="w-full h-full object-cover object-top transition duration-500">
+        </div>
+        <div class="p-5 text-center bg-white relative z-10 flex-grow flex flex-col justify-end">
+          <h3 class="font-bold text-slate-900 text-base tracking-tight mb-1">Mr. Ka Sadam</h3>
+          <span class="inline-block bg-blue-50 text-[#002855] text-xs font-semibold px-3 py-1 rounded-full mt-2 leading-tight">
+            Student Disciplinary & Services
+          </span>
         </div>
       </div>
 
     </div>
-  </section>
+  </main>
 
-  <!-- Footer -->
-  <footer class="bg-[#02214d] text-white py-12 px-6 relative">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+  <!-- Complete Standard School Footer -->
+  <footer class="bg-[#02214d] text-slate-300 pt-16 pb-8 px-6 relative border-t-4 border-amber-400">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
       
-      <!-- Campus Address -->
+      <!-- Address Column -->
       <div>
-        <h3 class="text-lg font-semibold mb-3 border-b border-white w-fit pb-1">Campus Address</h3>
-        <p class="text-sm leading-relaxed">
+        <h3 class="text-white font-semibold tracking-wider uppercase text-sm mb-4 pb-2 border-b border-blue-800">Campus Address</h3>
+        <p class="text-xs sm:text-sm leading-relaxed text-slate-300">
           No. 419, Rada Street, Phum Tum Nub, Sangkat Phnom Penh Thmei, Khan Saen Sokh (120801), Phnom Penh Capital, Kingdom of Cambodia
         </p>
-        <a href="https://www.facebook.com/caisedu" class="inline-block mt-4 w-8 h-8 border rounded-full text-center leading-8 hover:bg-white hover:text-[#02214d] transition">
-          <i class="fab fa-facebook-f">f</i>
-        </a>
+        <div class="mt-6">
+          <a href="https://www.facebook.com/caisedu" target="_blank" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-blue-900/50 text-white hover:bg-amber-400 hover:text-slate-950 transition shadow-sm">
+            <span class="font-bold text-sm">f</span>
+          </a>
+        </div>
       </div>
 
-      <!-- Our Contacts -->
+      <!-- Contacts Column -->
       <div>
-        <h3 class="text-lg font-semibold mb-3 border-b border-white w-fit pb-1">Our Contacts</h3>
-        <p class="text-sm">
-          Registrar Office: (+855) 70 946 041</p>
-        <p class="text-sm mt-2">Student Services: (+855) 12 946 041</p>
-        <p class="text-sm mt-2">
-          Finance Office: (+855) 98 946 041</p>
-        <p class="text-sm mt-2">Email: info@cais.edu.kh</p>
+        <h3 class="text-white font-semibold tracking-wider uppercase text-sm mb-4 pb-2 border-b border-blue-800">Our Contacts</h3>
+        <div class="text-xs sm:text-sm space-y-3">
+          <p><span class="text-slate-400 block text-xs">Registrar Office:</span> (+855) 70 946 041</p>
+          <p><span class="text-slate-400 block text-xs">Student Services:</span> (+855) 12 946 041</p>
+          <p><span class="text-slate-400 block text-xs">Finance Office:</span> (+855) 98 946 041</p>
+          <p><span class="text-slate-400 block text-xs">Email:</span> <a href="mailto:info@cais.edu.kh" class="text-amber-400 hover:underline">info@cais.edu.kh</a></p>
+        </div>
       </div>
 
-      <!-- Quick Links -->
+      <!-- Links Column -->
       <div>
-        <h3 class="text-lg font-semibold mb-3 border-b border-white w-fit pb-1">Quick Links</h3>
-        <ul class="text-sm space-y-2">
-          <li><a href="https://sites.google.com/caisedu.com/guidance-resources/home" target="_blank" class="hover:underline">› University and Careers</a></li>
-          <li><a href="https://drive.google.com/file/d/1lJk1FRe0gHvwKqCcTP8ful9dnmTsYHFq/view?usp=sharing" target="_blank" class="hover:underline">› School Curriculum</a></li>
-          <li><a href="https://drive.google.com/file/d/1jjaEDeOag58ZMCuKKZCYejP6qsb2Xm__/view?usp=sharing" target="_blank" class="hover:underline">› School History</a></li>
-          <li><a hhref="https://drive.google.com/file/d/1PuA1HRQ7Wlxm6QT8OktzJtFMdKlca6xe/view?usp=sharing" target="_blank" class="hover:underline">› School Logo</a></li>
-          <li><a href="https://drive.google.com/file/d/1g6esWqYipTlW75T7wuYsOvueWXVSwbU-/view?usp=sharing" target="_blank" class="hover:underline">› School Calendar</a></li>
-          <li><a href="https://drive.google.com/file/d/1L7VDNpo1ZLoQRwDvJrhjelEF1ONw_DAq/view?usp=sharing" target="_blank" class="hover:underline">› Student Handbook</a></li>
-          <li><a href="https://opac.cais.edu.kh/" target="_blank" class="hover:underline">› Library</a></li>
-          <li><a href="https://lms.cais.edu.kh/" target="_blank" class="hover:underline">› Moodle</a></li>
+        <h3 class="text-white font-semibold tracking-wider uppercase text-sm mb-4 pb-2 border-b border-blue-800">Quick Links</h3>
+        <ul class="text-xs sm:text-sm space-y-2.5">
+          <li><a href="https://sites.google.com/caisedu.com/guidance-resources/home" target="_blank" class="hover:text-amber-400 transition flex items-center"><span>&rsaquo; University and Careers</span></a></li>
+          <li><a href="https://drive.google.com/file/d/1lJk1FRe0gHvwKqCcTP8ful9dnmTsYHFq/view?usp=sharing" target="_blank" class="hover:text-amber-400 transition flex items-center"><span>&rsaquo; School Curriculum</span></a></li>
+          <li><a href="https://drive.google.com/file/d/1jjaEDeOag58ZMCuKKZCYejP6qsb2Xm__/view?usp=sharing" target="_blank" class="hover:text-amber-400 transition flex items-center"><span>&rsaquo; School History</span></a></li>
+          <li><a href="https://drive.google.com/file/d/1g6esWqYipTlW75T7wuYsOvueWXVSwbU-/view?usp=sharing" target="_blank" class="hover:text-amber-400 transition flex items-center"><span>&rsaquo; School Calendar</span></a></li>
+          <li><a href="https://drive.google.com/file/d/1L7VDNpo1ZLoQRwDvJrhjelEF1ONw_DAq/view?usp=sharing" target="_blank" class="hover:text-amber-400 transition flex items-center"><span>&rsaquo; Student Handbook</span></a></li>
+          <li><a href="https://lms.cais.edu.kh/" target="_blank" class="text-amber-400 hover:underline transition flex items-center font-medium"><span>&rsaquo; Moodle LMS</span></a></li>
         </ul>
       </div>
 
-      <!-- Contact Us -->
+      <!-- Map Block Component -->
       <div>
-        <h3 class="text-lg font-semibold mb-3 border-b border-white w-fit pb-1">Visit Us</h3>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.5364050120324!2d104.88466527608405!3d11.585055088617178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109518149711e9f%3A0xb90146b821c0c40d!2sCambodia%20Adventist%20International%20School!5e0!3m2!1sen!2skh!4v1751354926393!5m2!1sen!2skh" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <h3 class="text-white font-semibold tracking-wider uppercase text-sm mb-4 pb-2 border-b border-blue-800">Visit Us</h3>
+        <div class="rounded-xl overflow-hidden shadow-md border border-blue-900/80 aspect-video lg:h-40 lg:w-full">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.5364050120324!2d104.88466527608405!3d11.585055088617178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109518149711e9f%3A0xb90146b821c0c40d!2sCambodia%20Adventist%20International%20School!5e0!3m2!1sen!2skh!4v1751354926393!5m2!1sen!2skh" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
     </div>
 
-    <!-- Copyright -->
-    <div class="mt-12 border-t border-blue-900 pt-4 text-center text-sm text-gray-300">
+    <!-- Copyright Footnote Area -->
+    <div class="mt-16 pt-6 border-t border-blue-900 text-center text-xs text-slate-400">
       &copy; Copyright 2026 | All Rights Reserved by 
-      <a href="#" class="text-blue-300 hover:underline">
-        Sala Antharakchet Adventist (Kampuchea)
-      </a>
+      <a href="#" class="text-amber-400 hover:underline ml-1">Sala Antharakchet Adventist (Kampuchea)</a>
     </div>
 
-    <!-- Code of Honor button -->
-
-    <!-- Back to Top button -->
-    <a href="#top" class="fixed bottom-4 right-4 bg-yellow-500 text-white p-4 rounded-full shadow hover:bg-yellow-600">
-      <svg class="w-4 h-4 font-semibold" fill="currentColor" viewBox="0 0 20 20">
-        <path fill-rule="evenodd" d="M3.293 9.707a1 1 0 011.414 0L10 4.414l5.293 5.293a1 1 0 001.414-1.414l-6-6a1 1 0 00-1.414 0l-6 6a1 1 0 010 1.414z" clip-rule="evenodd" />
+    <!-- Scroll Back to Top Interactive Anchor -->
+    <a href="#" class="fixed bottom-6 right-6 bg-amber-500 text-slate-950 p-3.5 rounded-full shadow-lg hover:bg-amber-400 hover:scale-110 active:scale-95 transition transform z-40">
+      <svg class="w-4 h-4 font-bold" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
       </svg>
     </a>
   </footer>
 
-
-  <!-- Burger Menu -->
+  <!-- Menu Trigger Logic Script -->
   <script>
     const menuBtn = document.getElementById("menuBtn");
     const mobileMenu = document.getElementById("mobileMenu");

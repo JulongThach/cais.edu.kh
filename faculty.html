@@ -3,617 +3,645 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cambodia Adventist International School</title>
+  <title>Faculty & Staff | Cambodia Adventist International School</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="img/favicon.png">
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#002855',
+              blue: '#02214d',
+              accent: '#06b6d4',
+              gold: '#eab308'
+            }
+          }
+        }
+      }
+    }
+  </script>
 
   <style>
     body {
       font-family: 'Poppins', sans-serif;
     }
-    html {
-      scroll-behavior: smooth;
-    }
-    .animate-fadeInUp {
+    .accordion-content {
+      transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out;
+      max-height: 0;
       opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s ease-out forwards;
+      overflow: hidden;
+    }
+    .accordion-content.open {
+      max-height: 2500px; /* Generous height capacity for large grids */
+      opacity: 1;
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-  <!-- Top Contact Bar (scrolls away) -->
-  <div class="hidden sm:flex bg-[#002855] h-[50px] text-white text-sm py-4 px-4 justify-end items-center space-x-6">
-    <div class="flex items-center space-x-1">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-inbound-fill" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877zM15.854.146a.5.5 0 0 1 0 .708L11.707 5H14.5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 1 0v2.793L15.146.146a.5.5 0 0 1 .708 0"/>
-      </svg>
-      <span>+855 (12) 946-041 | +855 (70) 946-041</span>
-    </div>
+<body class="bg-gray-50 text-gray-800 antialiased min-h-screen flex flex-col">
 
-    <div class="flex items-center space-x-1">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
-        <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
-      </svg>
-      <span>info@cais.edu.kh</span>
-    </div>
-
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgWA38XkUposkZZVW5WQ8J9O-kpMKZ2NbFsLlCRH6Nb1f8lg/viewform" target="_blank">
-      <div class="flex items-center space-x-1">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-square-fill" viewBox="0 0 16 16">
-          <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm8.93 4.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+  <!-- Top Contact Bar -->
+  <div class="hidden lg:flex bg-[#002855] text-slate-200 text-xs tracking-wide py-3 px-8 justify-between items-center border-b border-blue-900/50">
+    <div class="flex items-center space-x-6">
+      <div class="flex items-center space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="opacity-80" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
         </svg>
-        <span>Apply Now</span>
+        <span>+855 (12) 946-041 / +855 (70) 946-041</span>
       </div>
+      <div class="flex items-center space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="opacity-80" viewBox="0 0 16 16">
+          <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+        </svg>
+        <a href="mailto:info@cais.edu.kh" class="hover:text-amber-400 transition">info@cais.edu.kh</a>
+      </div>
+    </div>
+    <a href="https://system.cais.edu.kh/registration/form" target="_blank" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-semibold px-4 py-1 rounded transition text-xs shadow-sm">
+      Apply Now
     </a>
   </div>
 
-   <!-- Sticky Header -->
-  <header class="sticky top-0 left-0 bg-white shadow z-50 fade-slide">
-    <div class="max-w-7xl mx-auto h-[65px] px-4 flex justify-between items-center">
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 bg-white/95 backdrop-blur-md shadow-md z-50 border-b border-slate-100 transition-all">
+    <div class="max-w-7xl mx-auto h-20 px-6 flex justify-between items-center">
       <!-- Logo -->
-      <a href="index.html" class="flex items-center space-x-2">
-        <img src="img/logo.png" alt="Logo" class="h-10 w-auto"> <!-- smaller logo -->
+      <a href="index.html" class="flex items-center transition transform hover:scale-[1.02]">
+        <img src="img/logo.png" alt="CAIS Logo" class="h-10 w-auto">
       </a>
 
-    <!-- Desktop Nav -->
-    <nav class="hidden md:flex space-x-10 relative text-sm font-medium">
-      <a href="index.html" class="hover:text-blue-700 transition duration-300">Home</a>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8 text-[14px] font-medium tracking-wide text-slate-600">
+        <a href="index.html" class="hover:text-[#002855] transition">Home</a>
 
-      <!-- About Us Dropdown -->
-      <div class="relative group">
-        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
-          <span>About Us</span>
-          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div
-          class="absolute left-0 top-full mt-3 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
-        >
-          <a href="principal.html" class="block hover:bg-blue-50 border-b p-4">Principal's Message</a>
-          <a href="about.html" class="block hover:bg-blue-50 border-b p-4">Mission and Vision</a>
-          <a href="administration.html" class="block hover:bg-blue-50 border-b p-4">Administration</a>
-          <a href="faculty.html" class="block hover:bg-blue-50 border-b p-4">Faculty & Staff</a>
-          <a href="contact.html" class="block hover:bg-blue-50 border-b p-4">Contact Us</a>
+        <!-- Dropdowns styled dynamically -->
+        <div class="relative group py-2">
+          <button class="hover:text-[#002855] text-slate-900 font-semibold transition flex items-center space-x-1">
+            <span>About Us</span>
+            <svg class="w-4 h-4 opacity-70 transition group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="absolute left-0 top-full w-56 bg-white border border-slate-100 rounded-lg shadow-xl py-2 opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100 group-hover:visible transition-all duration-200 origin-top">
+            <a href="principal.html" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Principal's Message</a>
+            <a href="about.html" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Mission and Vision</a>
+            <a href="administration.html" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Administration</a>
+            <a href="faculty.html" class="block px-4 py-2.5 bg-slate-50 text-[#002855] border-l-2 border-[#002855] font-semibold transition">Faculty & Staff</a>
+            <a href="contact.html" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Contact Us</a>
+          </div>
         </div>
-      </div>
 
-      <!-- Admission Dropdown -->
-      <div class="relative group">
-        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
-          <span>Admission</span>
-          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div
-          class="absolute left-0 top-full mt-2 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
-        >
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTqmfdzG4pRYjxWC40D5zTeRZU3qabje0LgjhoP_tvY-SzNw/viewform" target="_blank" class="block hover:bg-blue-50 border-b p-4">Returning Student</a>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgWA38XkUposkZZVW5WQ8J9O-kpMKZ2NbFsLlCRH6Nb1f8lg/viewform" target="_blank" class="block hover:bg-blue-50 border-b p-4">New Student</a>
-          <a href="https://drive.google.com/file/d/1y5-8EsAVVyLW6_8J4_A3EqG9s2YEMh-P/view?usp=drive_link" target="_blank" class="block hover:bg-blue-50 border-b p-4">Tuition Fee</a>
+        <div class="relative group py-2">
+          <button class="hover:text-[#002855] transition flex items-center space-x-1">
+            <span>Admission</span>
+            <svg class="w-4 h-4 opacity-70 transition group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="absolute left-0 top-full w-56 bg-white border border-slate-100 rounded-lg shadow-xl py-2 opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100 group-hover:visible transition-all duration-200 origin-top">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTqmfdzG4pRYjxWC40D5zTeRZU3qabje0LgjhoP_tvY-SzNw/viewform" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Returning Student</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgWA38XkUposkZZVW5WQ8J9O-kpMKZ2NbFsLlCRH6Nb1f8lg/viewform" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">New Student</a>
+            <a href="https://drive.google.com/file/d/1y5-8EsAVVyLW6_8J4_A3EqG9s2YEMh-P/view?usp=drive_link" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Tuition Fee</a>
+          </div>
         </div>
-      </div>
 
-      <!-- Gallery Dropdown-->
-      <div class="relative group">
-        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
-          <span>Gallery</span>
-          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div
-          class="absolute left-0 top-full mt-3 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
-        >
-          <a href="https://drive.google.com/drive/folders/1Wv0efDPBOOdNPqvCkhw0dVclm7YHo_rA?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Activities</a>
-          <a href="https://drive.google.com/drive/folders/1ZBkTQnqoElsMOyYoNwF_mJlfrzaIdBH-?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Alumni</a>
-          <a href="https://drive.google.com/drive/folders/1_EKwG7MbNhsnmQh7z_BfoUhUuNCJrsrP?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Art Fair</a>
-          <a href="https://drive.google.com/drive/folders/1jaH8NTCQI8XZWESurX-atxUbcH_zcSVS?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Christmas Program</a>
-          <a href="https://drive.google.com/drive/folders/1PUlJT-mSzW63ORkK9VDpG_gKeFVpfSGT?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Cultural Show</a>
-          <a href="https://drive.google.com/drive/folders/1pxT8Ury7LjbsHNcAvIwMdE9ppZie4nBM?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Science Fair</a>
-          <a href="https://drive.google.com/drive/folders/1p2rBvtlde2xmylqqosR3EFx-hcpafpuT?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Sports</a>
+        <div class="relative group py-2">
+          <button class="hover:text-[#002855] transition flex items-center space-x-1">
+            <span>Gallery</span>
+            <svg class="w-4 h-4 opacity-70 transition group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="absolute right-0 top-full w-60 bg-white border border-slate-100 rounded-lg shadow-xl py-2 opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100 group-hover:visible transition-all duration-200 origin-top max-h-96 overflow-y-auto">
+            <a href="https://drive.google.com/drive/folders/1Wv0efDPBOOdNPqvCkhw0dVclm7YHo_rA?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Activities</a>
+            <a href="https://drive.google.com/drive/folders/1ZBkTQnqoElsMOyYoNwF_mJlfrzaIdBH-?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Alumni</a>
+            <a href="https://drive.google.com/drive/folders/1_EKwG7MbNhsnmQh7z_BfoUhUuNCJrsrP?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Art Fair</a>
+            <a href="https://drive.google.com/drive/folders/1jaH8NTCQI8XZWESurX-atxUbcH_zcSVS?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Christmas Program</a>
+            <a href="https://drive.google.com/drive/folders/1PUlJT-mSzW63ORkK9VDpG_gKeFVpfSGT?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Cultural Show</a>
+            <a href="https://drive.google.com/drive/folders/1pxT8Ury7LjbsHNcAvIwMdE9ppZie4nBM?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Science Fair</a>
+            <a href="https://drive.google.com/drive/folders/1p2rBvtlde2xmylqqosR3EFx-hcpafpuT?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Sports</a>
+          </div>
         </div>
-      </div>
 
-      <!-- Quick Link Dropdown -->
-      <div class="relative group">
-        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
-          <span>Quick Link</span>
-          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div
-          class="absolute left-0 top-full mt-3 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
-        >
-          <a href="https://drive.google.com/file/d/1kXuuONxd98njMy81rev3xRPDnAB7z9sT/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Academic Recognition</a>
-          <a href="https://drive.google.com/file/d/1lJk1FRe0gHvwKqCcTP8ful9dnmTsYHFq/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Curriculum</a>
-          <a href="https://drive.google.com/file/d/1jjaEDeOag58ZMCuKKZCYejP6qsb2Xm__/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School History</a>
-          <a href="https://drive.google.com/file/d/1PuA1HRQ7Wlxm6QT8OktzJtFMdKlca6xe/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Logo</a>
-          <a href="https://drive.google.com/file/d/1_Nhvn_tWPntOmTFBhtn9cQWbgPfNnDUn/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Handbook</a>
-          <a href="https://drive.google.com/file/d/1g6esWqYipTlW75T7wuYsOvueWXVSwbU-/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Calendar</a>
-          <a href="https://lms.cais.edu.kh/" target="_blank" class="block hover:bg-blue-50 border-b p-4">School LMS</a>
-          <a href="https://opac.cais.edu.kh/" target="_blank" class="block hover:bg-blue-50 border-b p-4">Library Catalog</a>
-          <a href="https://sites.google.com/caisedu.com/guidance-resources/home" target="_blank" class="block hover:bg-blue-50 border-b p-4">University and Careers</a>
-          <a href="https://drive.google.com/file/d/1SFacyL3k_Xg_yPzCnY4_HnlvJ4ppRBnp/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Yearbook</a>
+        <div class="relative group py-2">
+          <button class="hover:text-[#002855] transition flex items-center space-x-1">
+            <span>Quick Link</span>
+            <svg class="w-4 h-4 opacity-70 transition group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          <div class="absolute right-0 top-full w-64 bg-white border border-slate-100 rounded-lg shadow-xl py-2 opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100 group-hover:visible transition-all duration-200 origin-top max-h-96 overflow-y-auto">
+            <a href="https://drive.google.com/file/d/1kXuuONxd98njMy81rev3xRPDnAB7z9sT/view?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Academic Recognition</a>
+            <a href="https://drive.google.com/file/d/1lJk1FRe0gHvwKqCcTP8ful9dnmTsYHFq/view?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">School Curriculum</a>
+            <a href="https://drive.google.com/file/d/1jjaEDeOag58ZMCuKKZCYejP6qsb2Xm__/view?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">School History</a>
+            <a href="https://drive.google.com/file/d/1PuA1HRQ7Wlxm6QT8OktzJtFMdKlca6xe/view?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">School Logo</a>
+            <a href="https://drive.google.com/file/d/1_Nhvn_tWPntOmTFBhtn9cQWbgPfNnDUn/view?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">School Handbook</a>
+            <a href="https://drive.google.com/file/d/1g6esWqYipTlW75T7wuYsOvueWXVSwbU-/view?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">School Calendar</a>
+            <a href="https://drive.google.com/file/d/1SFacyL3k_Xg_yPzCnY4_HnlvJ4ppRBnp/view?usp=sharing" target="_blank" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Yearbook</a>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
 
-
-      <!-- Burger Button (Mobile) -->
-      <button id="menuBtn" class="md:hidden text-gray-800 focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
+      <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="md:hidden text-slate-800 focus:outline-none p-2 rounded-lg hover:bg-slate-100 transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
       </button>
     </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2 text-sm font-medium bg-white shadow">
-      <a href="#home" class="block hover:text-blue-700 transition duration-300">Home</a>
-      <div class="relative group">
-        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
-          <span>About Us</span>
-          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div
-          class="absolute left-0 top-full mt-3 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
-        >
-          <a href="principal.html" class="block hover:bg-blue-50 border-b p-4">Principal's Message</a>
-          <a href="about.html" class="block hover:bg-blue-50 border-b p-4">Mission and Vision</a>
-          <a href="administration.html" class="block hover:bg-blue-50 border-b p-4">Administration</a>
-          <a href="faculty.html" class="block hover:bg-blue-50 border-b p-4">Faculty & Staff</a>
-          <a href="contact.html" class="block hover:bg-blue-50 border-b p-4">Contact Us</a>
-        </div>
+    <!-- Mobile Navigation Stack Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3 shadow-inner">
+      <a href="index.html" class="block font-medium text-slate-600 hover:text-[#002855]">Home</a>
+      <div class="border-t border-slate-100 pt-2 space-y-1">
+        <p class="text-xs font-bold uppercase text-slate-400 tracking-wider">About Us</p>
+        <a href="principal.html" class="block pl-2 py-1 text-sm text-slate-600">Principal's Message</a>
+        <a href="about.html" class="block pl-2 py-1 text-sm text-slate-600">Mission and Vision</a>
+        <a href="administration.html" class="block pl-2 py-1 text-sm text-[#002855] font-semibold">Administration</a>
+        <a href="faculty.html" class="block pl-2 py-1 text-sm text-slate-600">Faculty & Staff</a>
+        <a href="contact.html" class="block pl-2 py-1 text-sm text-slate-600">Contact Us</a>
       </div>
-      <!-- Admission Dropdown -->
-      <div class="relative group">
-        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
-          <span>Admission</span>
-          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div
-          class="absolute left-0 top-full mt-2 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
-        >
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTqmfdzG4pRYjxWC40D5zTeRZU3qabje0LgjhoP_tvY-SzNw/viewform" target="_blank" class="block hover:bg-blue-50 border-b p-4">Returning Student</a>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgWA38XkUposkZZVW5WQ8J9O-kpMKZ2NbFsLlCRH6Nb1f8lg/viewform" target="_blank" class="block hover:bg-blue-50 border-b p-4">New Student</a>
-          <a href="https://drive.google.com/file/d/1gtRFEG-e-2_Eki0beZBAwG9D65vdOoUw/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Tuition Fee</a>
-        </div>
-      </div>
-      <!-- Gallery Dropdown-->
-      <div class="relative group">
-        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
-          <span>Gallery</span>
-          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div
-          class="absolute left-0 top-full mt-3 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
-        >
-          <a href="https://drive.google.com/drive/folders/1Wv0efDPBOOdNPqvCkhw0dVclm7YHo_rA?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Activities</a>
-          <a href="https://drive.google.com/drive/folders/1ZBkTQnqoElsMOyYoNwF_mJlfrzaIdBH-?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Alumni</a>
-          <a href="https://drive.google.com/drive/folders/1_EKwG7MbNhsnmQh7z_BfoUhUuNCJrsrP?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Art Fair</a>
-          <a href="https://drive.google.com/drive/folders/1jaH8NTCQI8XZWESurX-atxUbcH_zcSVS?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Christmas Program</a>
-          <a href="https://drive.google.com/drive/folders/1PUlJT-mSzW63ORkK9VDpG_gKeFVpfSGT?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Cultural Show</a>
-          <a href="https://drive.google.com/drive/folders/1pxT8Ury7LjbsHNcAvIwMdE9ppZie4nBM?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Science Fair</a>
-          <a href="https://drive.google.com/drive/folders/1p2rBvtlde2xmylqqosR3EFx-hcpafpuT?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">Sport</a>
-        </div>
-      </div>
-      <div class="relative group">
-        <button class="hover:text-blue-500 transition duration-300 flex items-center space-x-1">
-          <span>Quick Link</span>
-          <svg class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div
-          class="absolute left-0 top-full mt-3 w-52 bg-white text-gray-700 shadow-lg z-50 opacity-0 scale-y-95 invisible group-hover:opacity-100 group-hover:scale-y-100 group-hover:visible transition-all duration-300 origin-top"
-        >
-          <a href="https://drive.google.com/file/d/1kXuuONxd98njMy81rev3xRPDnAB7z9sT/view?usp=drive_link" target="_blank" class="block hover:bg-blue-50 border-b p-4">Academic Recognition</a>
-          <a href="https://drive.google.com/file/d/1lJk1FRe0gHvwKqCcTP8ful9dnmTsYHFq/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Curriculum</a>
-          <a href="https://drive.google.com/file/d/1jjaEDeOag58ZMCuKKZCYejP6qsb2Xm__/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School History</a>
-          <a href="https://drive.google.com/file/d/1PuA1HRQ7Wlxm6QT8OktzJtFMdKlca6xe/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Logo</a>
-          <a href="https://drive.google.com/file/d/1_Nhvn_tWPntOmTFBhtn9cQWbgPfNnDUn/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Handbook</a>
-          <a href="https://drive.google.com/file/d/1g6esWqYipTlW75T7wuYsOvueWXVSwbU-/view?usp=sharing" target="_blank" class="block hover:bg-blue-50 border-b p-4">School Calendar</a>
-          <a href="https://lms.cais.edu.kh/" target="_blank" class="block hover:bg-blue-50 border-b p-4">School LMS</a>
-          <a href="https://opac.cais.edu.kh/" target="_blank" class="block hover:bg-blue-50 border-b p-4">Library Catalog</a>
-          <a href="https://sites.google.com/caisedu.com/guidance-resources/home" target="_blank" class="block hover:bg-blue-50 border-b p-4">University and Careers</a>
-        </div>
-      </div>
+      <!-- Additional basic mobile sections could follow layout pattern if needed -->
     </div>
   </header>
 
-  <!-- President Message Section -->
-  <section id="message" class="py-8 px-4 sm:px-6 lg:px-8 bg-white">
-    <div class="max-w-6xl mx-auto px-4 py-6">
-      <!-- Header -->
-      <h2 class="text-3xl font-bold text-[#002855] mb-2">Faculty & Staff</h2>
-      <div class="h-1 w-32 bg-cyan-500 mb-1"></div>
-      <div class="h-1 w-40 bg-yellow-400 inline-block mr-2"></div>
-      <div class="h-1 w-6 bg-pink-700 inline-block"></div>
-      <p class="mt-5">“The greatest want of the world is the want of men—men who will not be bought or sold, men who in their inmost souls are true and honest, men who do not fear to call sin by its right name, men whose conscience is as true to duty as the needle to the pole, men who will stand for the right though the heavens fall.”</p>
-      <p class="mt-3">– Ellen G. White, Education –</p>
-    </div>
 
-    <!-- Accordion Item Template -->
-    <!-- Homeroom -->
-    <div class="max-w-6xl mx-auto border border-gray-300">
-      <div class="border-b">
-        <button onclick="togglePanel(this)" class="w-full flex justify-between items-center px-4 py-3 bg-gray-100 hover:bg-gray-200 text-left">
-          <span class="text-xl text-[#002855] font-medium">Homeroom Teacher</span>
-          <span class="text-blue-900 text-xl font-bold">+</span>
+  <!-- Main Content View -->
+  <main class="flex-grow">
+    <!-- Spiritual Quote Callout Block -->
+    <section class="max-w-5xl mx-auto px-4 mt-4">
+      <div class="bg-white border-l-4 border-brand-gold p-6 rounded-r-xl shadow-sm border border-gray-100">
+        <i class="fa-solid fa-quote-left text-3xl text-brand-gold/40 block mb-2"></i>
+        <p class="text-gray-700 italic text-sm md:text-base leading-relaxed font-light">
+          “The greatest want of the world is the want of men—men who will not be bought or sold, men who in their inmost souls are true and honest, men who do not fear to call sin by its right name, men whose conscience is as true to duty as the needle to the pole, men who will stand for the right though the heavens fall.”
+        </p>
+        <div class="mt-4 flex justify-between items-center flex-wrap gap-2 border-t border-gray-50 pt-3">
+          <span class="text-xs md:text-sm font-semibold text-brand-navy tracking-wide">— Ellen G. White, <span class="text-gray-500">Education</span> —</span>
+          <span class="bg-blue-50 text-brand-navy text-[10px] uppercase font-bold px-2 py-0.5 rounded">Core Values</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Faculty Accordions -->
+    <section class="py-12 px-4 max-w-7xl mx-auto space-y-4">
+      <!-- Faculty Showcase Header Segment -->
+      <div class="text-center mb-8">
+        <h1 class="text-2xl sm:text-3xl font-bold text-[#002855] tracking-tight mb-3">Faculty & Staff</h1>
+        <p class="text-slate-500 max-w-md mx-auto text-sm sm:text-base">Meet the dedicated educators molding future leaders</p>
+        <div class="flex justify-center items-center space-x-1 mt-6">
+          <span class="h-1 w-12 rounded-full bg-cyan-500"></span>
+          <span class="h-1 w-4 rounded-full bg-amber-400"></span>
+          <span class="h-1 w-2 rounded-full bg-rose-500"></span>
+        </div>
+      </div>
+      <!-- Accordion Section 1: Homeroom Teachers -->
+      <div class="bg-white border border-gray-200 shadow-sm rounded-xl overflow-hidden transition-all duration-300">
+        <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center px-6 py-4 bg-gray-50 hover:bg-gray-100/80 transition text-left group">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-brand-navy text-white rounded-lg flex items-center justify-center shadow-sm">
+              <i class="fa-solid fa-chalkboard-user text-lg"></i>
+            </div>
+            <div>
+              <span class="text-sm md:text-lg text-brand-navy font-bold tracking-tight">Homeroom Teachers</span>
+              <p class="text-xs text-gray-500 font-normal">Primary and Secondary class advisors</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-right text-gray-400 group-hover:text-brand-navy transition-transform duration-300 text-sm p-2 rounded-full bg-white shadow-sm"></i>
         </button>
-        <div class="hidden px-4 py-2 text-gray-700">
-          <div class="grid md:grid-cols-6 gap-6 text-center mt-5">
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/6.png" alt="principal" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mrs. Genevie Aclo</h4>
-              <p class="text-xs text-gray-600">Pre-Kindergarten</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/7.png" alt="academic" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Ms. Chan Seiha</h4>
-              <p class="text-xs text-gray-600">Kindergarten A</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/8.png" alt="finance" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Ms. Lin Sonisa</h4>
-              <p class="text-xs text-gray-600">Kindergarten B</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/9.png" alt="vice" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mrs. Leng Vannak</h4>
-              <p class="text-xs text-gray-600">Grade 01 A</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/yijie.png" alt="vice" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Ms. Niu Yijie</h4>
-              <p class="text-xs text-gray-600">Grade 01 B</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/10.png" alt="vice" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mrs. Ka Nida</h4>
-              <p class="text-xs text-gray-600">Grade 02 A</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/11.png" alt="vice" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Ms. Thach Rebecca</h4>
-              <p class="text-xs text-gray-600">Grade 02 B</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/12.png" alt="vice" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Ms. Thorn Sreynich</h4>
-              <p class="text-xs text-gray-600">Grade 03 A</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/13.png" alt="vice" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Ms. Pheurn Sreywin</h4>
-              <p class="text-xs text-gray-600">Grade 03 B</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/14.png" alt="vice" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Ms. Nang Chanyeema</h4>
-              <p class="text-xs text-gray-600">Grade 04 A</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/51.png" alt="4b" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Ms. Naa Paw Pha</h4>
-              <p class="text-xs text-gray-600">Grade 04 B</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/16.png" alt="4b" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Ms. Ping Chanleakena</h4>
-              <p class="text-xs text-gray-600">Grade 05 A</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/52.png" alt="5b" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mr. Rong Somrith</h4>
-              <p class="text-xs text-gray-600">Grade 05 B</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/18.png" alt="5b" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mrs. Jenrose Larano</h4>
-              <p class="text-xs text-gray-600">Grade 06 A</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/19.png" alt="5b" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Ms. Rechie Mae Ba-ad</h4>
-              <p class="text-xs text-gray-600">Grade 06 B</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/20.png" alt="5b" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mr. Jetro Alferez</h4>
-              <p class="text-xs text-gray-600">Grade 07 A</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/21.png" alt="5b" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mr. Choup Sela</h4>
-              <p class="text-xs text-gray-600">Grade 07 B / Technology</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/22.png" alt="5b" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Ms. Phan Sophia</h4>
-              <p class="text-xs text-gray-600">Grade 08 A</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/23.png" alt="5b" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mr. Nhin Vichhagar</h4>
-              <p class="text-xs text-gray-600">Grade 08 B / Technology</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/24.png" alt="5b" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Ms. Nang Chandina</h4>
-              <p class="text-xs text-gray-600">Grade 09</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/25.png" alt="5b" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mr. Keurm Piseth</h4>
-              <p class="text-xs text-gray-600">Grade 10 / Khmer</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/july.png" alt="5b" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mr. Thach July</h4>
-              <p class="text-xs text-gray-600">Grade 11</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/socheata.png" alt="5b" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mrs. Sieng Socheata</h4>
-              <p class="text-xs text-gray-600">Grade 12</p>
+        
+        <div class="accordion-content">
+          <div class="p-6 bg-white border-t border-gray-100">
+            <!-- Modern Responsive Multi-column Grid Layout -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5">
+              
+              <!-- Card Component -->
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/5.png" alt="Mrs. Nouem Chomnea" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Mrs. Nouem Chomnea</h4>
+                <p class="text-[11px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs">Pre-School</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 brelative mb-3 shadow-inner">
+                  <img src="img/faculty/6.png" alt="Ms. Aclo, Genevie Mariano" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Mrs. Aclo, Genevie Mariano</h4>
+                <p class="text-[11px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs">Kindergarten A</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/7.png" alt="Mrs. Leng Vannak" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Mrs. Leng Vannak</h4>
+                <p class="text-[11px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs">Kindergarten B</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/8.png" alt="Ms. Thorn Soksariya" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Ms. Thorn Soksariya</h4>
+                <p class="text-[11px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs">Grade 01 A</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/9.png" alt="Ms. Niu Yijie" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Ms. Niu Yijie</h4>
+                <p class="text-[11px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs">Grade 01 B</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/10.png" alt="Mrs. Ka Nida" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Mrs. Ka Nida</h4>
+                <p class="text-[11px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs">Grade 02 A</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/11.png" alt="Ms. Thach Rebecca" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Ms. Thach Rebecca</h4>
+                <p class="text-[11px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs">Grade 02 B</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/12.png" alt="Ms. Pheurn Sreywin" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Ms. Pheurn Sreywin</h4>
+                <p class="text-[11px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs">Grade 03 B</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 a relative mb-3 shadow-inner">
+                  <img src="img/faculty/13.png" alt="Mrs. Thorn Sreynich" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Mrs. Thorn Sreynich</h4>
+                <p class="text-[11px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs">Grade 03 A</p>
+              </div> 
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/14.png" alt="Ms. Nang Chanyeema" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Ms. Nang Chanyeema</h4>
+                <p class="text-[11px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs">Grade 04 A</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/15.png" alt="Ms. Lin Sonisa" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Ms. Lin Sonisa</h4>
+                <p class="text-[11px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs">Grade 04 B</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/16.png" alt="Ms. Myers Seila" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Ms. Myers Seila</h4>
+                <p class="text-[11px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs">Grade 05 A</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/17.png" alt="Ms. Ping Chanleakena" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Ms. Ping Chanleakena</h4>
+                <p class="text-[11px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs">Grade 05 B</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/18.png" alt="Ms. Nang Chandina" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Ms. Nang Chandina</h4>
+                <p class="text-[11px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs">Grade 06 A</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/19.png" alt="Mr. Choup Sela" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Mr. Choup Sela</h4>
+                <p class="text-[11px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs">Grade 06 B</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/20.png" alt="Ms. Chan Seiha" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Ms. Chan Seiha</h4>
+                <p class="text-[11px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs">Grade 07 A</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/21.png" alt="Mrs. Leng Vanny" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Mrs. Leng Vanny</h4>
+                <p class="text-[10px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs leading-none">Grade 07 B</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/22.png" alt="Ms. Phan Sophia" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Ms. Phan Sophia</h4>
+                <p class="text-[11px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs">Grade 08 A</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/23.png" alt="Ms. Naa Paw Pha" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Ms. Naa Paw Pha</h4>
+                <p class="text-[10px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs leading-none">Grade 08 B</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/24.png" alt="Mr. Alferez, Jetro Suan" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Mr. Alferez, Jetro Suan</h4>
+                <p class="text-[11px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs">Grade 09 A</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/25.png" alt="Ms. Ka Daneth" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Ms. Ka Daneth</h4>
+                <p class="text-[10px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs leading-none">Grade 09 B </p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/26.png" alt="Mr. Nhin Vichhagar" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Mr. Nhin Vichhagar</h4>
+                <p class="text-[11px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs">Grade 10</p>
+              </div>
+  
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/27.png" alt="Mr. Thach July" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Mr. Thach July</h4>
+                <p class="text-[11px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs">Grade 11</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/28.png" alt="Mr. Keurm Piseth" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Mr. Keurm Piseth</h4>
+                <p class="text-[11px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs">Grade 12</p>
+              </div>
+
             </div>
           </div>
         </div>
       </div>
 
-      <div class="border-b">
-        <button onclick="togglePanel(this)" class="w-full flex justify-between items-center px-4 py-3 bg-gray-100 hover:bg-gray-200 text-left">
-          <span class="text-xl text-[#002855] font-medium">Subject Teacher</span>
-          <span class="text-blue-900 text-xl font-bold">+</span>
+      <!-- Accordion Section 2: Subject Specialists -->
+      <div class="bg-white border border-gray-200 shadow-sm rounded-xl overflow-hidden transition-all duration-300">
+        <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center px-6 py-4 bg-gray-50 hover:bg-gray-100/80 transition text-left group">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-brand-navy text-white rounded-lg flex items-center justify-center shadow-sm">
+              <i class="fa-solid fa-book-open text-lg"></i>
+            </div>
+            <div>
+              <span class="text-sm md:text-lg text-brand-navy font-bold tracking-tight">Subject Teachers</span>
+              <p class="text-xs text-gray-500 font-normal">Department and specialized curriculum guides</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-right text-gray-400 group-hover:text-brand-navy transition-transform duration-300 text-sm p-2 rounded-full bg-white shadow-sm"></i>
         </button>
-        <div class="hidden px-4 py-2 text-gray-700">
-          <div class="grid md:grid-cols-6 gap-6 text-center mt-5">
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/33.png" alt="principal" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mrs. Chhun Saveoun</h4>
-              <p class="text-xs text-gray-600">Khmer Language Art</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/38.png" alt="academic" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mrs. Leng Vanny</h4>
-              <p class="text-xs text-gray-600">Chapel / Physical Education</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/28.png" alt="finance" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mr. Sieng Sopheaktra</h4>
-              <p class="text-xs text-gray-600">Science & Chemistry</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/34.png" alt="vice" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mrs. Sip Silim</h4>
-              <p class="text-xs text-gray-600">Khmer Language Art</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/30.png" alt="vice" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mrs. Sorn Sodalin</h4>
-              <p class="text-xs text-gray-600">Khmer Language Art</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/32.png" alt="vice" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mr. Sou Chhaiya</h4>
-              <p class="text-xs text-gray-600">Librarian / KSL</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/31.png" alt="vice" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mr. Thach Sophat</h4>
-              <p class="text-xs text-gray-600">Physical Education / Sport Coordinator</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/29.png" alt="vice" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Ms. Try Trinet</h4>
-              <p class="text-xs text-gray-600">Khmer Language Art</p>
+        
+        <div class="accordion-content">
+          <div class="p-6 bg-white border-t border-gray-100">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5">
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/32.png" alt="Mrs. Sip Silim" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Mrs. Sip Silim</h4>
+                <p class="text-[10px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs leading-tight">Khmer Language Art</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/33.png" alt="Mrs. Sorn Sodalin" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Mrs. Sorn Sodalin</h4>
+                <p class="text-[10px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs leading-tight">Khmer Language Art</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/30.png" alt="Mr. Sieng Socheata" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Mr. Sieng Socheata</h4>
+                <p class="text-[10px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs leading-tight">Morality / Chaplain</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/31.png" alt="Mr. Sieng Sopheaktra" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Mr. Sieng Sopheaktra</h4>
+                <p class="text-[10px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs leading-tight">Science & Chemistry</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/34.png" alt="Mr. Thach Sophat" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Mr. Thach Sophat</h4>
+                <p class="text-[9px] text-gray-500 mt-1 font-medium bg-white border inline-block px-1 py-0.5 rounded-full shadow-2xs leading-none">P.E. / Sports Coord.</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/29.png" alt="Mr. Rong Somrith" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Mr. Rong Somrith</h4>
+                <p class="text-[10px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs leading-tight">P.E. / Sports Coord.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="border-b">
-        <button onclick="togglePanel(this)" class="w-full flex justify-between items-center px-4 py-3 bg-gray-100 hover:bg-gray-200 text-left">
-          <span class="text-xl text-[#002855] font-medium">Finance Department</span>
-          <span class="text-blue-900 text-xl font-bold">+</span>
-        </button>
-        <div class="hidden px-4 py-2 text-gray-700">
-          <div class="grid md:grid-cols-6 gap-6 text-center mt-5">
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/36.png" alt="academic" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Ms. Sieng Rosa</h4>
-              <p class="text-xs text-gray-600">Senior Accountant</p>
+      <!-- Accordion Section 3: Operations & Finance -->
+      <div class="bg-white border border-gray-200 shadow-sm rounded-xl overflow-hidden transition-all duration-300">
+        <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center px-6 py-4 bg-gray-50 hover:bg-gray-100/80 transition text-left group">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-brand-navy text-white rounded-lg flex items-center justify-center shadow-sm">
+              <i class="fa-solid fa-vault text-lg"></i>
             </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/37.png" alt="finance" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Ms. Sophal Kanneetha</h4>
-              <p class="text-xs text-gray-600">Cashier / Front Desk</p>
+            <div>
+              <span class="text-sm md:text-lg text-brand-navy font-bold tracking-tight">Finance & Registrar</span>
+              <p class="text-xs text-gray-500 font-normal">Account operations and corporate office handling</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-right text-gray-400 group-hover:text-brand-navy transition-transform duration-300 text-sm p-2 rounded-full bg-white shadow-sm"></i>
+        </button>
+        
+        <div class="accordion-content">
+          <div class="p-6 bg-white border-t border-gray-100">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5">
+              
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/40.png" alt="Ms. Sieng Rosa" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Ms. Sieng Rosa</h4>
+                <p class="text-[11px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs">Senior Accountant</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/39.png" alt="Ms. Sophal Kanneetha" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Ms. Sophal Kanneetha</h4>
+                <p class="text-[10px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs leading-tight">Cashier / Front Desk</p>
+              </div>
+
+              <div class="bg-gray-50 border border-gray-100 rounded-xl p-2 text-center transition hover:shadow-md group">
+                <div class="overflow-hidden rounded-lg bg-gray-200 relative mb-3 shadow-inner">
+                  <img src="img/faculty/35.png" alt="Mrs. Chin Chariya " class="w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400'">
+                </div>
+                <h4 class="font-bold text-xs md:text-sm text-brand-navy leading-tight px-1">Mrs. Chin Chariya</h4>
+                <p class="text-[10px] text-gray-500 mt-1 font-medium bg-white border inline-block px-2 py-0.5 rounded-full shadow-2xs leading-tight">Registrar</p>
+              </div>
+
             </div>
           </div>
         </div>
       </div>
+    </section>
+  </main>
 
-      <div class="border-b">
-        <button onclick="togglePanel(this)" class="w-full flex justify-between items-center px-4 py-3 bg-gray-100 hover:bg-gray-200 text-left">
-          <span class="text-xl text-[#002855] font-medium">Service Staff</span>
-          <span class="text-blue-900 text-xl font-bold">+</span>
-        </button>
-        <div class="hidden px-4 py-2 text-gray-700">
-          <div class="grid md:grid-cols-6 gap-6 text-center mt-5">
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/39.png" alt="principal" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Ms. Leng Savun</h4>
-              <p class="text-xs text-gray-600">Custodian</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/40.png" alt="academic" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mrs. Hang Votey</h4>
-              <p class="text-xs text-gray-600">Custodian</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/41.png" alt="finance" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mrs. Than Phyny</h4>
-              <p class="text-xs text-gray-600">Custodian</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/42.png" alt="finance" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Ms. Chin Sreypao</h4>
-              <p class="text-xs text-gray-600">Custodian</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/43.png" alt="finance" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mrs. Morn Bunna</h4>
-              <p class="text-xs text-gray-600">Custodian</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/44.png" alt="finance" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Ms. Pum Touch</h4>
-              <p class="text-xs text-gray-600">Custodian</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/45.png" alt="finance" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mr. Hun Sophea</h4>
-              <p class="text-xs text-gray-600">Security</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/46.png" alt="finance" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mr. Chak Phoeun</h4>
-              <p class="text-xs text-gray-600">Security</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/47.png" alt="finance" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mr. Meas Sophal</h4>
-              <p class="text-xs text-gray-600">Security</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/48.png" alt="finance" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mr. Thach Song</h4>
-              <p class="text-xs text-gray-600">Security</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/49.png" alt="finance" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mr. Choup Dina</h4>
-              <p class="text-xs text-gray-600">Maintenance</p>
-            </div>
-            <div class="bg-gray-100 p-1 shadow">
-              <img src="img/faculty/50.png" alt="finance" class="w-64 mx-auto mb-4">
-              <h4 class="font-bold text-sm">Mr. Sek Vichet</h4>
-              <p class="text-xs text-gray-600">Maintenance</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-[#02214d] text-white py-12 px-6 relative">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+  <!-- Complete Standard School Footer -->
+  <footer class="bg-[#02214d] text-slate-300 pt-16 pb-8 px-6 relative border-t-4 border-amber-400">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
       
-      <!-- Campus Address -->
+      <!-- Address Column -->
       <div>
-        <h3 class="text-lg font-semibold mb-3 border-b border-white w-fit pb-1">Campus Address</h3>
-        <p class="text-sm leading-relaxed">
+        <h3 class="text-white font-semibold tracking-wider uppercase text-sm mb-4 pb-2 border-b border-blue-800">Campus Address</h3>
+        <p class="text-xs sm:text-sm leading-relaxed text-slate-300">
           No. 419, Rada Street, Phum Tum Nub, Sangkat Phnom Penh Thmei, Khan Saen Sokh (120801), Phnom Penh Capital, Kingdom of Cambodia
         </p>
-        <a href="https://www.facebook.com/caisedu" class="inline-block mt-4 w-8 h-8 border rounded-full text-center leading-8 hover:bg-white hover:text-[#02214d] transition">
-          <i class="fab fa-facebook-f">f</i>
-        </a>
+        <div class="mt-6">
+          <a href="https://www.facebook.com/caisedu" target="_blank" class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-blue-900/50 text-white hover:bg-amber-400 hover:text-slate-950 transition shadow-sm">
+            <span class="font-bold text-sm">f</span>
+          </a>
+        </div>
       </div>
 
-      <!-- Our Contacts -->
+      <!-- Contacts Column -->
       <div>
-        <h3 class="text-lg font-semibold mb-3 border-b border-white w-fit pb-1">Our Contacts</h3>
-        <p class="text-sm">
-          Registrar Office: (+855) 70 946 041</p>
-        <p class="text-sm mt-2">Student Services: (+855) 12 946 041</p>
-        <p class="text-sm mt-2">
-          Finance Office: (+855) 98 946 041</p>
-        <p class="text-sm mt-2">Email: info@cais.edu.kh</p>
+        <h3 class="text-white font-semibold tracking-wider uppercase text-sm mb-4 pb-2 border-b border-blue-800">Our Contacts</h3>
+        <div class="text-xs sm:text-sm space-y-3">
+          <p><span class="text-slate-400 block text-xs">Registrar Office:</span> (+855) 70 946 041</p>
+          <p><span class="text-slate-400 block text-xs">Student Services:</span> (+855) 12 946 041</p>
+          <p><span class="text-slate-400 block text-xs">Finance Office:</span> (+855) 98 946 041</p>
+          <p><span class="text-slate-400 block text-xs">Email:</span> <a href="mailto:info@cais.edu.kh" class="text-amber-400 hover:underline">info@cais.edu.kh</a></p>
+        </div>
       </div>
 
-      <!-- Quick Links -->
+      <!-- Links Column -->
       <div>
-        <h3 class="text-lg font-semibold mb-3 border-b border-white w-fit pb-1">Quick Links</h3>
-        <ul class="text-sm space-y-2">
-          <li><a href="https://sites.google.com/caisedu.com/guidance-resources/home" target="_blank" class="hover:underline">› University and Careers</a></li>
-          <li><a href="https://drive.google.com/file/d/1lJk1FRe0gHvwKqCcTP8ful9dnmTsYHFq/view?usp=sharing" target="_blank" class="hover:underline">› School Curriculum</a></li>
-          <li><a href="https://drive.google.com/file/d/1jjaEDeOag58ZMCuKKZCYejP6qsb2Xm__/view?usp=sharing" target="_blank" class="hover:underline">› School History</a></li>
-          <li><a hhref="https://drive.google.com/file/d/1PuA1HRQ7Wlxm6QT8OktzJtFMdKlca6xe/view?usp=sharing" target="_blank" class="hover:underline">› School Logo</a></li>
-          <li><a href="https://drive.google.com/file/d/1g6esWqYipTlW75T7wuYsOvueWXVSwbU-/view?usp=sharing" target="_blank" class="hover:underline">› School Calendar</a></li>
-          <li><a href="https://drive.google.com/file/d/1L7VDNpo1ZLoQRwDvJrhjelEF1ONw_DAq/view?usp=sharing" target="_blank" class="hover:underline">› Student Handbook</a></li>
-          <li><a href="https://opac.cais.edu.kh/" target="_blank" class="hover:underline">› Library</a></li>
-          <li><a href="https://lms.cais.edu.kh/" target="_blank" class="hover:underline">› Moodle</a></li>
+        <h3 class="text-white font-semibold tracking-wider uppercase text-sm mb-4 pb-2 border-b border-blue-800">Quick Links</h3>
+        <ul class="text-xs sm:text-sm space-y-2.5">
+          <li><a href="https://sites.google.com/caisedu.com/guidance-resources/home" target="_blank" class="hover:text-amber-400 transition flex items-center"><span>&rsaquo; University and Careers</span></a></li>
+          <li><a href="https://drive.google.com/file/d/1lJk1FRe0gHvwKqCcTP8ful9dnmTsYHFq/view?usp=sharing" target="_blank" class="hover:text-amber-400 transition flex items-center"><span>&rsaquo; School Curriculum</span></a></li>
+          <li><a href="https://drive.google.com/file/d/1jjaEDeOag58ZMCuKKZCYejP6qsb2Xm__/view?usp=sharing" target="_blank" class="hover:text-amber-400 transition flex items-center"><span>&rsaquo; School History</span></a></li>
+          <li><a href="https://drive.google.com/file/d/1g6esWqYipTlW75T7wuYsOvueWXVSwbU-/view?usp=sharing" target="_blank" class="hover:text-amber-400 transition flex items-center"><span>&rsaquo; School Calendar</span></a></li>
+          <li><a href="https://drive.google.com/file/d/1L7VDNpo1ZLoQRwDvJrhjelEF1ONw_DAq/view?usp=sharing" target="_blank" class="hover:text-amber-400 transition flex items-center"><span>&rsaquo; Student Handbook</span></a></li>
+          <li><a href="https://lms.cais.edu.kh/" target="_blank" class="text-amber-400 hover:underline transition flex items-center font-medium"><span>&rsaquo; Moodle LMS</span></a></li>
         </ul>
       </div>
 
-      <!-- Contact Us -->
+      <!-- Map Block Component -->
       <div>
-        <h3 class="text-lg font-semibold mb-3 border-b border-white w-fit pb-1">Visit Us</h3>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.5364050120324!2d104.88466527608405!3d11.585055088617178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109518149711e9f%3A0xb90146b821c0c40d!2sCambodia%20Adventist%20International%20School!5e0!3m2!1sen!2skh!4v1751354926393!5m2!1sen!2skh" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <h3 class="text-white font-semibold tracking-wider uppercase text-sm mb-4 pb-2 border-b border-blue-800">Visit Us</h3>
+        <div class="rounded-xl overflow-hidden shadow-md border border-blue-900/80 aspect-video lg:h-40 lg:w-full">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.5364050120324!2d104.88466527608405!3d11.585055088617178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109518149711e9f%3A0xb90146b821c0c40d!2sCambodia%20Adventist%20International%20School!5e0!3m2!1sen!2skh!4v1751354926393!5m2!1sen!2skh" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
     </div>
 
-    <!-- Copyright -->
-    <div class="mt-12 border-t border-blue-900 pt-4 text-center text-sm text-gray-300">
+    <!-- Copyright Footnote Area -->
+    <div class="mt-16 pt-6 border-t border-blue-900 text-center text-xs text-slate-400">
       &copy; Copyright 2026 | All Rights Reserved by 
-      <a href="#" class="text-blue-300 hover:underline">
-        Sala Antharakchet Adventist (Kampuchea)
-      </a>
+      <a href="#" class="text-amber-400 hover:underline ml-1">Sala Antharakchet Adventist (Kampuchea)</a>
     </div>
 
-    <!-- Code of Honor button -->
-
-    <!-- Back to Top button -->
-    <a href="#top" class="fixed bottom-4 right-4 bg-yellow-500 text-white p-4 rounded-full shadow hover:bg-yellow-600">
-      <svg class="w-4 h-4 font-semibold" fill="currentColor" viewBox="0 0 20 20">
-        <path fill-rule="evenodd" d="M3.293 9.707a1 1 0 011.414 0L10 4.414l5.293 5.293a1 1 0 001.414-1.414l-6-6a1 1 0 00-1.414 0l-6 6a1 1 0 010 1.414z" clip-rule="evenodd" />
+    <!-- Scroll Back to Top Interactive Anchor -->
+    <a href="#" class="fixed bottom-6 right-6 bg-amber-500 text-slate-950 p-3.5 rounded-full shadow-lg hover:bg-amber-400 hover:scale-110 active:scale-95 transition transform z-40">
+      <svg class="w-4 h-4 font-bold" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
       </svg>
     </a>
   </footer>
 
-
-  <!-- Burger Menu -->
+  <!-- Operational Core Scripts -->
   <script>
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
-
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
+    // Mobile Navigation Drawer Toggle Handler
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = menuBtn.querySelector('i');
+      if(mobileMenu.classList.contains('hidden')) {
+        icon.className = "fa-solid fa-bars text-xl";
+      } else {
+        icon.className = "fa-solid fa-xmark text-xl";
+      }
     });
-  </script>
-  <!-- Toggle -->
-  <script>
-    function togglePanel(button) {
-      const content = button.nextElementSibling;
-      const icon = button.querySelector("span:last-child");
 
-      const isOpen = !content.classList.contains("hidden");
-      content.classList.toggle("hidden");
-      icon.textContent = isOpen ? "+" : "–";
+    // Elegant Smooth Accordion State Engine
+    function toggleAccordion(button) {
+      const targetContent = button.nextElementSibling;
+      const arrowIcon = button.querySelector('.fa-chevron-right');
+      
+      // Toggle current
+      if (targetContent.classList.contains('open')) {
+        targetContent.classList.remove('open');
+        button.classList.remove('bg-blue-50/50');
+        if(arrowIcon) arrowIcon.style.transform = 'rotate(0deg)';
+      } else {
+        // Optional: Close all other open sections to look perfectly managed
+        document.querySelectorAll('.accordion-content.open').forEach(el => {
+          el.classList.remove('open');
+          el.previousElementSibling.classList.remove('bg-blue-50/50');
+          const openedArrow = el.previousElementSibling.querySelector('.fa-chevron-right');
+          if(openedArrow) openedArrow.style.transform = 'rotate(0deg)';
+        });
+
+        targetContent.classList.add('open');
+        button.classList.add('bg-blue-50/50');
+        if(arrowIcon) arrowIcon.style.transform = 'rotate(90deg)';
+      }
     }
+
+    // Auto-open the primary category on view loading
+    document.addEventListener("DOMContentLoaded", () => {
+      const firstAccordionBtn = document.querySelector('button[onclick="toggleAccordion(this)"]');
+      if(firstAccordionBtn) toggleAccordion(firstAccordionBtn);
+    });
   </script>
 </body>
 </html>
