@@ -1,46 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Principal's Message | Cambodia Adventist International School</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letter of Appreciation | Cambodia Adventist International School</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="img/favicon.png">
-
-  <!-- Prestige Typography Mix: Inter (Sans) + Lora (Serif) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    .font-serif-prestige {
-      font-family: 'Lora', Georgia, serif;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    .animate-fadeInUp {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s ease-out forwards;
-    }
+    body { font-family: 'Outfit', sans-serif; background-color: #FCFCFA; }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased">
-  
-  <!-- Top Contact Bar -->
+<body class="text-neutral-800 antialiased selection:bg-blue-100 selection:text-blue-900">
+
   <div class="hidden lg:flex bg-[#002855] text-slate-200 text-xs tracking-wide py-3 px-8 justify-between items-center border-b border-blue-900/50">
     <div class="flex items-center space-x-6">
       <div class="flex items-center space-x-2">
@@ -61,27 +35,24 @@
     </a>
   </div>
 
-  <!-- Header / Navigation -->
   <header class="sticky top-0 bg-white/95 backdrop-blur-md shadow-md z-50 border-b border-slate-100 transition-all">
     <div class="max-w-7xl mx-auto h-20 px-6 flex justify-between items-center">
-      <!-- Logo -->
       <a href="index.html" class="flex items-center transition transform hover:scale-[1.02]">
         <img src="img/logo.png" alt="CAIS Logo" class="h-10 w-auto">
       </a>
 
-      <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center space-x-8 text-[14px] font-medium tracking-wide text-slate-600">
         <a href="index.html" class="hover:text-[#002855] transition">Home</a>
 
-        <!-- Dropdowns styled dynamically -->
         <div class="relative group py-2">
           <button class="hover:text-[#002855] text-slate-900 font-semibold transition flex items-center space-x-1">
             <span>About Us</span>
             <svg class="w-4 h-4 opacity-70 transition group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
           </button>
           <div class="absolute left-0 top-full w-56 bg-white border border-slate-100 rounded-lg shadow-xl py-2 opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100 group-hover:visible transition-all duration-200 origin-top">
-            <a href="principal.html" class="block px-4 py-2.5 bg-slate-50 text-[#002855] border-l-2 border-[#002855] font-semibold transition">Principal's Message</a>
+            <a href="principal.html" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Principal's Message</a>
             <a href="about.html" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Mission and Vision</a>
+            <a href="appreciation.html" class="block px-4 py-2.5 bg-slate-50 text-[#002855] border-l-2 border-[#002855] font-semibold transition">Word of Appreciation</a>
             <a href="administration.html" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Administration</a>
             <a href="faculty.html" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Faculty & Staff</a>
             <a href="contact.html" class="block px-4 py-2.5 hover:bg-slate-50 hover:text-[#002855] border-l-2 border-transparent hover:border-[#002855] transition">Contact Us</a>
@@ -133,13 +104,11 @@
         </div>
       </nav>
 
-      <!-- Mobile Menu Button -->
       <button id="menuBtn" class="md:hidden text-slate-800 focus:outline-none p-2 rounded-lg hover:bg-slate-100 transition">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
       </button>
     </div>
 
-    <!-- Mobile Navigation Stack Menu -->
     <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3 shadow-inner">
       <a href="index.html" class="block font-medium text-slate-600 hover:text-[#002855]">Home</a>
       <div class="border-t border-slate-100 pt-2 space-y-1">
@@ -150,101 +119,115 @@
         <a href="faculty.html" class="block pl-2 py-1 text-sm text-slate-600">Faculty & Staff</a>
         <a href="contact.html" class="block pl-2 py-1 text-sm text-slate-600">Contact Us</a>
       </div>
-      <!-- Additional basic mobile sections could follow layout pattern if needed -->
     </div>
   </header>
 
-  <!-- President Message Section (The Prestige Editorial Layer) -->
-  <section id="message" class="py-10 px-4 sm:px-6 lg:px-8 bg-slate-50">
-    <div class="max-w-5xl mx-auto bg-white p-8 md:p-14 shadow-xl rounded-xl border border-gray-100">
-      
-      <!-- Header Design -->
-      <div class="mb-10 border-b border-gray-200 pb-6">
-        <h2 class="text-2xl md:text-3xl font-serif-prestige font-bold text-[#002855] tracking-tight mb-4">
-          Message from the Principal
-        </h2>
-        <div class="flex gap-1 h-1.5 w-48">
-          <div class="w-1/2 bg-cyan-500 rounded-full"></div>
-          <div class="w-1/3 bg-yellow-400 rounded-full"></div>
-          <div class="w-1/6 bg-pink-700 rounded-full"></div>
-        </div>
+  <main class="max-w-5xl mx-auto px-6 py-8 sm:py-8 space-y-16">
+    
+    <div class="text-center space-y-4 max-w-2xl mx-auto">
+      <div class="inline-flex items-center bg-blue-50 text-[#002855] text-xs px-4 py-1.5 rounded-full font-medium tracking-wide border border-blue-100">
+        <span>Honoring Four Unforgettable Years of Dedicated Service</span>
       </div>
-
-      <!-- Content Layout using Lora (font-serif-prestige) for pristine reading dynamics -->
-      <div class="text-gray-800 text-justify leading-relaxed text-base md:text-lg font-serif-prestige clear-both">
-        
-        <!-- Profile Photo (Floated gracefully left) -->
-        <div class="float-left mr-8 mb-6 w-full sm:w-72">
-          <img src="img/administration/Sieng Kimsreng.png" alt="President Photo"
-               class="w-full h-auto shadow-md rounded-xl border-4 border-white ring-1 ring-gray-200" />
-        </div>
-
-        <!-- Letter Body -->
-        <p class="mb-4 font-sans font-bold text-lg text-[#002855]">
-          Dear Cambodia Adventist School Students, Parents, and CAIS Family,
-        </p>
-        
-        <p class="mb-4 indent-8">
-          Leader comes; leader goes, passing the responsibilities to the next one. The seed has been sown, the next person waters, but it is the Lord to make it grow. <span class="text-cyan-700 font-sans text-sm font-semibold tracking-wide ml-1">[1 Corinthians 3:6]</span>
-        </p>
-        
-        <p class="mb-4 indent-8">
-          The primary philosophy of Seventh-day Adventist (SDA) education isn't just about getting good grades on standardized tests or securing a well-paid job. Of course, academic excellence is absolutely a priority; however, it is even more important to build on a deeply theological foundation for them; that is the restoration of the lost image into the character of God (image of God). Every child must be trained in the way they should go, and when he/she is old, he/she will not depart from it. <span class="text-cyan-700 font-sans text-sm font-semibold tracking-wide ml-1">[Proverbs 22:6]</span>
-        </p>
-        
-        <p class="mb-4 indent-8">
-          It is a privilege and I am grateful that I was called to step into the role of principal for the next five years. Students, whether you are a returning student who knows these halls by heart, or a new student walking through the school campus for the very first time (perhaps with a backpack, full of books that looks a bit too big and heavy for you), I warmly welcome you. We are standing at the threshold of a beautiful new chapter. As we look ahead at the school years <strong>2026-2027</strong>, we aren't just planning for the next school year; we are charting a new course to inspire minds, nurture souls, and to build a community that feels like family.
-        </p>
-        
-        <p class="mb-4 indent-8">
-          Over the coming years, our focus will be anchored in the core commitments to ensure all children don't just succeed as the Reflectors, but the Thinkers who possess the moral independence to evaluate facts, seek truth for themselves, stand for principle, and think critically. 
-        </p>
-        
-        <p class="mb-4 indent-8">
-          In the Adventist school, being teachers are the highest call to create an environment where students would see God’s love daily, develop a strong moral compass, and learn the joy of selfless service to the country and the world. We acknowledge that all children are the heritage from God and they are equal in the eye of the Lord and will have the same opportunity to receive proper education that not only train the mind but also the heart. In a true educational framework, academic brilliance without a good character is considered a failure. The ultimate success of a student isn't measured by their GPA they get, the salary they will earn, or the prestige of their university acceptance, but it is measured by their integrity, their kindness, their work ethic, and their faithfulness to God, the Creator.
-        </p>
-        
-        <p class="mb-4 indent-8">
-          The world is changing rapidly, and our classrooms will reflect that. Our teachers will not be conformed to this world but will be transformed by renewing of their minds, that they may be proved what is that good and acceptable and perfect will of God, <span class="text-cyan-700 font-sans text-sm font-semibold tracking-wide ml-1">[Romans 12:2]</span>. From one school year to another school year, we will be improving our instructional curriculum with critical thinking, technology integration, integration of faith in learning, and creative problem-solving, ensuring our graduates are ready for whatever the future holds. We confidently ensure that CAIS is a place where students want to run into, not away from. We make it as a shelter of refuge for the students from whatever background. We are committed to fostering a campus culture of kindness, mental well-being, and mutual respect where every single student feels seen, accepted, and valued.
-        </p>
-        
-        <p class="mb-4 indent-8">
-          <strong class="text-[#002855] font-sans text-[15px] tracking-wide uppercase block mt-6 mb-1">To our inspiring students,</strong> whether you are eager to get back to the classroom or secretly wishing that summer vacation lasted just a little bit longer, I am so glad that you are here. My challenge to you for this 2026–2027 chapter is simple: Don't be afraid to grow; make mistakes, ask big questions, be kind to the person sitting next to you, and discover the unique gifts God has given you. The future is incredibly bright at Cambodia Adventist School. Let’s step into this new era together with faith in our hearts and a smile on our faces, go forth and conquer.
-        </p>
-        
-        <p class="mb-4 indent-8">
-          <strong class="text-[#002855] font-sans text-[15px] tracking-wide uppercase block mt-6 mb-1">To the parents,</strong> I would like to thank you for entrusting us with your most beloved, greatest treasures. Education is a team sport, and we cannot do this without your support. Your involvement in their education has a great impact on your child’s success. We promise that school’s door will always be open to you. Let’s work hand-in-hand over these years to celebrate our children's triumphs and support them physically, socially, emotionally, and spiritually through their challenges.
-        </p>
-        
-        <p class="mb-8">
-          May God richly bless our school as we begin this remarkable journey.
-        </p>
-        
-        <!-- Standard Sans Sign-off Section -->
-        <div class="clear-both pt-8 border-t border-gray-100 max-w-sm font-sans">
-          <p class="italic text-gray-600 mb-4 text-sm md:text-base">
-            Sincerely in His Service with prayers and anticipation,
-          </p>
-          
-          <!-- Principal Signature Render Space -->
-          <div class="h-16 mb-2">
-            <img src="img/administration/signature.jpg" alt="Signature of Principal" class="h-full object-contain mix-blend-multiply" />
-          </div>
-          
-          <!-- Official Credentials -->
-          <p class="font-bold text-xl text-[#002855] tracking-wide">Mr. Sieng Kimsreng</p>
-          <p class="text-xs uppercase tracking-wider text-gray-400 font-bold mt-0.5">Principal of Cambodia Adventist School</p>
-        </div>
-
-      </div>
+      <h1 class="text-3xl sm:text-3xl font-light text-neutral-900 tracking-tight leading-tight">
+        A Legacy of Faith, Leadership, <br class="hidden sm:inline">
+        and <span class="font-medium text-[#002855]">Educational Excellence</span>
+      </h1>
+      <p class="text-neutral-500 text-xs sm:text-sm font-light">
+        A special recognition statement from the faculty, staff, and students of Cambodia Adventist International School.
+      </p>
     </div>
-  </section>
-  
-  <!-- Complete Standard School Footer -->
+
+    <div class="flex flex-row justify-center items-start gap-6 max-w-md mx-auto">
+        <div class="space-y-3 group flex flex-col items-center flex-1">
+            <div class="w-[10rem] rounded-xl bg-slate-100 border border-slate-200/60 overflow-hidden shadow-sm relative">
+            <img src="img/appreciation/edward.png" alt="Mr. Dean Edwards" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+            <div class="hidden absolute inset-0 flex flex-col items-center justify-center bg-slate-50 text-slate-400 p-4 text-center text-xs font-light">
+                <svg class="w-8 h-8 mb-2 stroke-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                [ Portrait Placeholder: Mr. Dean Edwards ]
+            </div>
+            </div>
+            <div class="text-center">
+            <h3 class="font-medium text-neutral-900 text-sm sm:text-base">Mr. Dean Edwards</h3>
+            <p class="text-[11px] text-neutral-400 uppercase tracking-widest font-medium">School Principal</p>
+            </div>
+        </div>
+
+        <div class="space-y-3 group flex flex-col items-center flex-1">
+            <div class="w-[10rem] rounded-xl bg-slate-100 border border-slate-200/60 overflow-hidden shadow-sm relative">
+            <img src="img/appreciation/helen.png" alt="Dr. Helen Edwards" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+            <div class="hidden absolute inset-0 flex flex-col items-center justify-center bg-slate-50 text-slate-400 p-4 text-center text-xs font-light">
+                <svg class="w-8 h-8 mb-2 stroke-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                [ Portrait Placeholder: Dr. Helen Edwards ]
+            </div>
+            </div>
+            <div class="text-center">
+            <h3 class="font-medium text-neutral-900 text-sm sm:text-base">Dr. Helen Edwards</h3>
+            <p class="text-[11px] text-neutral-400 uppercase tracking-widest font-medium">Academic Director</p>
+            </div>
+        </div>
+    </div>
+
+    <article class="bg-white border border-neutral-200/60 rounded-xl p-6 sm:p-12 shadow-xl shadow-neutral-950/[0.01] space-y-8">
+      
+      <div class="pb-4 border-b border-neutral-100">
+        <span class="text-[10px] font-bold tracking-widest text-[#002855] uppercase block mb-1">Official Institutional Presentation</span>
+        <h2 class="text-xl font-medium text-neutral-900">To: Mr. Edwards and Dr. Helen Edwards</h2>
+      </div>
+
+      <p class="text-neutral-600 text-sm sm:text-base font-light leading-relaxed text-justify">
+        On behalf of the Cambodia Adventist International School (CAIS), we would like to extend our deepest gratitude and appreciation for the incredible leadership, and heart Mr. Dean Edwards and Dr. Helen Edwards have poured into our school community for four years of dedicated service to CAIS school in the country of Cambodia. Uprooting your comfortable lives in the United States to serve in a different corner of the world is a profound calling of the Lord, and you both answered it with grace, enthusiasm, and an unwavering commitment to it. Over the last four years, your combined presence has left remarkable lessons on our school campus. We want to specifically recognize the unique gifts you both shared with us:
+      </p>
+
+      <div class="space-y-6 pt-2">
+        
+        <div class="bg-slate-50/60 border border-slate-200/40 p-6 sm:p-8 rounded-2xl space-y-3">
+          <div class="flex items-center space-x-2 text-[#002855]">
+            <span class="w-1.5 h-4 bg-amber-500 rounded-full"></span>
+            <h3 class="font-semibold text-neutral-900 text-base">To Mr. Edwards:</h3>
+          </div>
+          <p class="text-neutral-600 text-xs sm:text-sm font-light leading-relaxed text-justify">
+            As a school principal, your leadership has been a cornerstone of stability and growth for CAIS over the last four years. Thank you for your wisdom, your ability to guide our students with a firm yet redemptive hand, and your dedication to creating a safe, nurturing, and spiritually grounded environment. You didn’t just manage the school but also initiated to build the sport court and a two story-school building. During these four years, your steady hand and clear vision kept our campus running smoothly, providing the stability our community needed to flourish. Thank you for always prioritizing the well-being of the students, especially the little ones, and staff ensuring that everyone who walked through our campus felt valued and heard.
+          </p>
+        </div>
+
+        <div class="bg-slate-50/60 border border-slate-200/40 p-6 sm:p-8 rounded-2xl space-y-3">
+          <div class="flex items-center space-x-2 text-[#002855]">
+            <span class="w-1.5 h-4 bg-blue-600 rounded-full"></span>
+            <h3 class="font-semibold text-neutral-900 text-base">To Dr. Helen Edwards:</h3>
+          </div>
+          <p class="text-neutral-600 text-xs sm:text-sm font-light leading-relaxed text-justify">
+            You raised the bar for academic demand and standard at CAIS, ensuring our students receive a world-class international education that prepares them for the university level. Thank you for investing so deeply in both our teaching and non-teaching staff, mentoring them with patience, and fostering a culture of continuous learning and professional growth. Thank you so much for your profound dedication, expertise, and the intellectual way you brought to our CAIS community. Your commitment to high standards, your care for the well-being of those around you, and your willingness to invest deeply in the lives of our students and staff have elevated CAIS in many ways, especially assisting most of our teachers to pursue a master’s degree in Curriculum, Special Education and Education Administration. The influence of a great educator and leader of yours will never be erased from our memories.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="space-y-4 pt-4 border-t border-neutral-100 text-neutral-600 text-sm sm:text-base font-light leading-relaxed text-justify">
+        <p>
+          As you prepare for the next chapter of your service, please know that you have left behind a legacy of faith, hard-working hands, and educational excellence. You will be missed, and the seeds you have planted here will continue to grow for years to come.
+        </p>
+        <p>
+          We wish you both abundant blessings, good health, and immense joy in whatever adventures God leads you to the next steps of your service in the education field. Thank you for four unforgettable years.
+        </p>
+      </div>
+
+      <div class="pt-8 border-t border-neutral-100 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 text-xs text-neutral-500">
+        <div class="space-y-1">
+          <p class="font-medium text-[#002855] text-sm italic">With highest esteem and warmest regards,</p>
+          <p class="font-light">The Faculty, Staff, and Students of Cambodia Adventist International School</p>
+        </div>
+        <div class="text-left sm:text-right shrink-0 border-l sm:border-l-0 sm:border-r-2 border-slate-200 pl-4 sm:pl-0 sm:pr-4 py-1">
+          <h4 class="font-semibold text-neutral-900 uppercase tracking-wider">Office of the Principal</h4>
+          <p class="font-light text-[11px]">Cambodia Adventist International School</p>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
   <footer class="bg-[#02214d] text-slate-300 pt-16 pb-8 px-6 relative border-t-4 border-amber-400">
     <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
       
-      <!-- Address Column -->
       <div>
         <h3 class="text-white font-semibold tracking-wider uppercase text-sm mb-4 pb-2 border-b border-blue-800">Campus Address</h3>
         <p class="text-xs sm:text-sm leading-relaxed text-slate-300">
@@ -257,7 +240,6 @@
         </div>
       </div>
 
-      <!-- Contacts Column -->
       <div>
         <h3 class="text-white font-semibold tracking-wider uppercase text-sm mb-4 pb-2 border-b border-blue-800">Our Contacts</h3>
         <div class="text-xs sm:text-sm space-y-3">
@@ -268,20 +250,18 @@
         </div>
       </div>
 
-      <!-- Links Column -->
       <div>
         <h3 class="text-white font-semibold tracking-wider uppercase text-sm mb-4 pb-2 border-b border-blue-800">Quick Links</h3>
         <ul class="text-xs sm:text-sm space-y-2.5">
-          <li><a href="https://sites.google.com/caisedu.com/guidance-resources/home" target="_blank" class="hover:text-amber-400 transition flex items-center"><span>&rsaquo; University and Careers</span></a></li>
-          <li><a href="https://drive.google.com/file/d/1lJk1FRe0gHvwKqCcTP8ful9dnmTsYHFq/view?usp=sharing" target="_blank" class="hover:text-amber-400 transition flex items-center"><span>&rsaquo; School Curriculum</span></a></li>
-          <li><a href="https://drive.google.com/file/d/1jjaEDeOag58ZMCuKKZCYejP6qsb2Xm__/view?usp=sharing" target="_blank" class="hover:text-amber-400 transition flex items-center"><span>&rsaquo; School History</span></a></li>
-          <li><a href="https://drive.google.com/file/d/1g6esWqYipTlW75T7wuYsOvueWXVSwbU-/view?usp=sharing" target="_blank" class="hover:text-amber-400 transition flex items-center"><span>&rsaquo; School Calendar</span></a></li>
-          <li><a href="https://drive.google.com/file/d/1L7VDNpo1ZLoQRwDvJrhjelEF1ONw_DAq/view?usp=sharing" target="_blank" class="hover:text-amber-400 transition flex items-center"><span>&rsaquo; Student Handbook</span></a></li>
-          <li><a href="https://lms.cais.edu.kh/" target="_blank" class="text-amber-400 hover:underline transition flex items-center font-medium"><span>&rsaquo; Moodle LMS</span></a></li>
+          <li><a href="https://sites.google.com/caisedu.com/guidance-resources/home" target="_blank" class="hover:text-amber-400 transition flex items-center"><span>› University and Careers</span></a></li>
+          <li><a href="https://drive.google.com/file/d/1lJk1FRe0gHvwKqCcTP8ful9dnmTsYHFq/view?usp=sharing" target="_blank" class="hover:text-amber-400 transition flex items-center"><span>› School Curriculum</span></a></li>
+          <li><a href="https://drive.google.com/file/d/1jjaEDeOag58ZMCuKKZCYejP6qsb2Xm__/view?usp=sharing" target="_blank" class="hover:text-amber-400 transition flex items-center"><span>› School History</span></a></li>
+          <li><a href="https://drive.google.com/file/d/1g6esWqYipTlW75T7wuYsOvueWXVSwbU-/view?usp=sharing" target="_blank" class="hover:text-amber-400 transition flex items-center"><span>› School Calendar</span></a></li>
+          <li><a href="https://drive.google.com/file/d/1L7VDNpo1ZLoQRwDvJrhjelEF1ONw_DAq/view?usp=sharing" target="_blank" class="hover:text-amber-400 transition flex items-center"><span>› Student Handbook</span></a></li>
+          <li><a href="https://lms.cais.edu.kh/" target="_blank" class="text-amber-400 hover:underline transition flex items-center font-medium"><span>› Moodle LMS</span></a></li>
         </ul>
       </div>
 
-      <!-- Map Block Component -->
       <div>
         <h3 class="text-white font-semibold tracking-wider uppercase text-sm mb-4 pb-2 border-b border-blue-800">Visit Us</h3>
         <div class="rounded-xl overflow-hidden shadow-md border border-blue-900/80 aspect-video lg:h-40 lg:w-full">
@@ -290,13 +270,11 @@
       </div>
     </div>
 
-    <!-- Copyright Footnote Area -->
     <div class="mt-16 pt-6 border-t border-blue-900 text-center text-xs text-slate-400">
-      &copy; Copyright 2026 | All Rights Reserved by 
+      © Copyright 2026 | All Rights Reserved by 
       <a href="#" class="text-amber-400 hover:underline ml-1">Sala Antharakchet Adventist (Kampuchea)</a>
     </div>
 
-    <!-- Scroll Back to Top Interactive Anchor -->
     <a href="#" class="fixed bottom-6 right-6 bg-amber-500 text-slate-950 p-3.5 rounded-full shadow-lg hover:bg-amber-400 hover:scale-110 active:scale-95 transition transform z-40">
       <svg class="w-4 h-4 font-bold" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
@@ -304,13 +282,14 @@
     </a>
   </footer>
 
-  <!-- Burger Menu Script -->
   <script>
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
 
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
     });
   </script>
 </body>
